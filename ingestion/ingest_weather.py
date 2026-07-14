@@ -6,7 +6,7 @@ from grid_mapper import get_connection
 
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
-AQICN_TOKEN = os.getenv("AQICN_TOKEN")
+OPENWEATHER_KEY = os.getenv("OPENWEATHER_KEY")
 
 def get_sample_grid_points():
     conn = get_connection()
@@ -22,38 +22,36 @@ def get_sample_grid_points():
     rows = cur.fetchall()
     cur.close()
     conn.close()
-    return rows  # list of (grid_id, lat, lon)
+    return rows
 
-def fetch_aqicn_reading(lat, lon):
-    url = f"https://api.waqi.info/feed/geo:{lat};{lon}/?token={AQICN_TOKEN}"
+def fetch_weather_reading(lat, lon):
+    url = (
+        f"https://api.openweathermap.org/data/2.5/weather"
+        f"?lat={lat}&lon={lon}&appid={OPENWEATHER_KEY}&units=metric"
+    )
     response = requests.get(url, timeout=10)
     data = response.json()
 
-    if data.get("status") != "ok":
+    if str(data.get("cod")) != "200":
         return None
 
-    iaqi = data["data"].get("iaqi", {})
     return {
-        "aqi": data["data"].get("aqi"),
-        "pm2_5": iaqi.get("pm25", {}).get("v"),
-        "pm10": iaqi.get("pm10", {}).get("v"),
-        "no2": iaqi.get("no2", {}).get("v"),
-        "so2": iaqi.get("so2", {}).get("v"),
+        "temperature": data.get("main", {}).get("temp"),
+        "wind_speed": data.get("wind", {}).get("speed"),
+        "wind_direction": data.get("wind", {}).get("deg"),
     }
 
 def insert_reading(grid_id, reading):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-        INSERT INTO sensor_readings (grid_id, timestamp, aqi, pm2_5, pm10, no2, so2)
-        VALUES (%s, NOW(), %s, %s, %s, %s, %s);
+        INSERT INTO weather_metrics (grid_id, timestamp, temperature, wind_speed, wind_direction)
+        VALUES (%s, NOW(), %s, %s, %s);
     """, (
         grid_id,
-        reading["aqi"],
-        reading["pm2_5"],
-        reading["pm10"],
-        reading["no2"],
-        reading["so2"],
+        reading["temperature"],
+        reading["wind_speed"],
+        reading["wind_direction"],
     ))
     conn.commit()
     cur.close()
@@ -61,13 +59,13 @@ def insert_reading(grid_id, reading):
 
 def run():
     points = get_sample_grid_points()
-    print(f"Fetching AQICN data for {len(points)} sample grid points...")
+    print(f"Fetching weather data for {len(points)} sample grid points...")
 
     for grid_id, lat, lon in points:
-        reading = fetch_aqicn_reading(lat, lon)
+        reading = fetch_weather_reading(lat, lon)
         if reading:
             insert_reading(grid_id, reading)
-            print(f"{grid_id}: aqi={reading['aqi']}")
+            print(f"{grid_id}: temp={reading['temperature']}, wind={reading['wind_speed']}")
         else:
             print(f"{grid_id}: no data returned, skipping")
 
