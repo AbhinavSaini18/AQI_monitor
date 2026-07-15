@@ -1,4 +1,5 @@
 import os
+import json
 import requests
 from pathlib import Path
 from dotenv import load_dotenv
@@ -8,6 +9,19 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 AQICN_TOKEN = os.getenv("AQICN_TOKEN")
 
+
+
+# def load_fallback_aqicn():
+#     with open("fallback_data/aqicn_sample.json") as f:
+#         data = json.load(f)
+#     iaqi = data["data"].get("iaqi", {})
+#     return {
+#         "aqi": data["data"].get("aqi"),
+#         "pm2_5": iaqi.get("pm25", {}).get("v"),
+#         "pm10": iaqi.get("pm10", {}).get("v"),
+#         "no2": iaqi.get("no2", {}).get("v"),
+#         "so2": iaqi.get("so2", {}).get("v"),
+#     }
 def get_sample_grid_points():
     conn = get_connection()
     cur = conn.cursor()
@@ -25,22 +39,25 @@ def get_sample_grid_points():
     return rows  # list of (grid_id, lat, lon)
 
 def fetch_aqicn_reading(lat, lon):
-    url = f"https://api.waqi.info/feed/geo:{lat};{lon}/?token={AQICN_TOKEN}"
-    response = requests.get(url, timeout=10)
-    data = response.json()
+    try:
+        url = f"https://api.waqi.info/feed/geo:{lat};{lon}/?token={AQICN_TOKEN}"
+        response = requests.get(url, timeout=10)
+        data = response.json()
 
-    if data.get("status") != "ok":
-        return None
+        if data.get("status") != "ok":
+            raise ValueError("API returned non-ok status")
 
-    iaqi = data["data"].get("iaqi", {})
-    return {
-        "aqi": data["data"].get("aqi"),
-        "pm2_5": iaqi.get("pm25", {}).get("v"),
-        "pm10": iaqi.get("pm10", {}).get("v"),
-        "no2": iaqi.get("no2", {}).get("v"),
-        "so2": iaqi.get("so2", {}).get("v"),
-    }
-
+        iaqi = data["data"].get("iaqi", {})
+        return {
+            "aqi": data["data"].get("aqi"),
+            "pm2_5": iaqi.get("pm25", {}).get("v"),
+            "pm10": iaqi.get("pm10", {}).get("v"),
+            "no2": iaqi.get("no2", {}).get("v"),
+            "so2": iaqi.get("so2", {}).get("v"),
+        }
+    except Exception as e:
+        print(f"  live call failed ({e}), using fallback data")
+        # return load_fallback_aqicn()
 def insert_reading(grid_id, reading):
     conn = get_connection()
     cur = conn.cursor()

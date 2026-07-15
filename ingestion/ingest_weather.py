@@ -1,10 +1,20 @@
 import os
+import json
 import requests
 from pathlib import Path
 from dotenv import load_dotenv
 from grid_mapper import get_connection
 
-load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
+
+# def load_fallback_weather():
+#     with open("fallback_data/weather_sample.json") as f:
+#         data = json.load(f)
+#     return {
+#         "temperature": data.get("main", {}).get("temp"),
+#         "wind_speed": data.get("wind", {}).get("speed"),
+#         "wind_direction": data.get("wind", {}).get("deg"),
+#     }
+# load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 OPENWEATHER_KEY = os.getenv("OPENWEATHER_KEY")
 
@@ -25,21 +35,25 @@ def get_sample_grid_points():
     return rows
 
 def fetch_weather_reading(lat, lon):
-    url = (
-        f"https://api.openweathermap.org/data/2.5/weather"
-        f"?lat={lat}&lon={lon}&appid={OPENWEATHER_KEY}&units=metric"
-    )
-    response = requests.get(url, timeout=10)
-    data = response.json()
+    try:
+        url = (
+            f"https://api.openweathermap.org/data/2.5/weather"
+            f"?lat={lat}&lon={lon}&appid={OPENWEATHER_KEY}&units=metric"
+        )
+        response = requests.get(url, timeout=10)
+        data = response.json()
 
-    if str(data.get("cod")) != "200":
-        return None
+        if str(data.get("cod")) != "200":
+            raise ValueError("API returned non-200 cod")
 
-    return {
-        "temperature": data.get("main", {}).get("temp"),
-        "wind_speed": data.get("wind", {}).get("speed"),
-        "wind_direction": data.get("wind", {}).get("deg"),
-    }
+        return {
+            "temperature": data.get("main", {}).get("temp"),
+            "wind_speed": data.get("wind", {}).get("speed"),
+            "wind_direction": data.get("wind", {}).get("deg"),
+        }
+    except Exception as e:
+        print(f"  live call failed ({e}), using fallback data")
+        # return load_fallback_weather()  
 
 def insert_reading(grid_id, reading):
     conn = get_connection()
