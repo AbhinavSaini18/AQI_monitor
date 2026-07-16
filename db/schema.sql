@@ -34,6 +34,24 @@ CREATE TABLE grid_features (
     PRIMARY KEY (grid_id, timestamp)
 );
 CREATE INDEX idx_features_timeline ON grid_features (timestamp);
+-- 1. Create the Weather Metrics Table
+CREATE TABLE weather_metrics (
+    metrics_id SERIAL PRIMARY KEY,
+    grid_id VARCHAR(50) REFERENCES city_1km_grid(grid_id),
+    timestamp TIMESTAMP NOT NULL,
+    temperature DOUBLE PRECISION,
+    wind_speed DOUBLE PRECISION,
+    wind_direction DOUBLE PRECISION
+);
+
+-- 2. Create the Traffic Metrics Table
+CREATE TABLE traffic_metrics (
+    metrics_id SERIAL PRIMARY KEY,
+    grid_id VARCHAR(50) REFERENCES city_1km_grid(grid_id),
+    timestamp TIMESTAMP NOT NULL,
+    congestion_index DOUBLE PRECISION,
+    average_speed DOUBLE PRECISION
+);
 
 -- 4. Target Serving Layer (The final landing pad populated by Module 3 inference)
 CREATE TABLE ai_predictions (
