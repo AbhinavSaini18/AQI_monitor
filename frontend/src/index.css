@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { background-color: #020617; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Leaflet dark theme tweaks */
+.leaflet-container { background: #0f172a !important; font-family: inherit; }
+.leaflet-control-attribution {
+  background: rgba(15,23,42,0.7) !important;
+  color: #64748b !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+}
+.leaflet-control-attribution a { color: #94a3b8 !important; }
+.leaflet-bar a {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-color: #334155 !important;
+}
+.leaflet-bar a:hover { background: #334155 !important; }
+.aqi-marker { background: transparent !important; border: none !important; }
+.leaflet-tooltip.aqi-tooltip {
+  background: rgba(15,23,42,0.95) !important;
+  border: 1px solid #334155 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(8px);
+}
+.leaflet-tooltip.aqi-tooltip::before { display: none; }
+
+/* Animations */
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse-ring 2s cubic-bezier(0.4,0,0.6,1) infinite;
+}
+
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-float-up { animation: float-up 0.5s ease-out both; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #06b6d4 0%, #22d3ee 25%, #3b82f6 50%, #22d3ee 75%, #06b6d4 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.08); opacity: 0.6; }
+}
+.animate-breathe { animation: breathe 4s ease-in-out infinite; }
+
+@keyframes count-glow {
+  0%, 100% { filter: drop-shadow(0 0 20px currentColor); }
+  50% { filter: drop-shadow(0 0 40px currentColor); }
+}
+.animate-count-glow { animation: count-glow 3s ease-in-out infinite; }
