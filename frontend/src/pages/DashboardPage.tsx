@@ -4,9 +4,9 @@ import AQITrendChart from '../components/AQITrendChart';
 import KeyPollutants from '../components/KeyPollutants';
 import SourceAttributionChart from '../components/SourceAttributionChart';
 import AIAnalysisPanel from '../components/AIAnalysisPanel';
-import HeatMap from '../components/HeatMap';
-import { aqiTrendData, keyPollutants, sourceAttributions } from '../data/mockData';
 
+import { aqiTrendData, keyPollutants, sourceAttributions } from '../data/mockData';
+import LiveMap from '../components/map/LiveMap';
 interface DashboardPageProps {
   aqi: number;
   trend: number;
@@ -37,7 +37,7 @@ export default function DashboardPage({ aqi, trend, weather }: DashboardPageProp
       </div>
 
       {/* Map full width */}
-      <HeatMap />
+      <LiveMap/>
 
       {/* Bottom row: Source attribution + AI analysis */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">

@@ -1,10 +1,11 @@
-import React, { useState, useCallback } from 'react';
-import Map, { Source, Layer, Marker, Popup } from 'react-map-gl/maplibre';
+import React, { useState, useCallback, useEffect } from 'react';
+import Map, { Source, Layer } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { X, Plus, Minus, Maximize2, Layers } from 'lucide-react';
 
 /* ── CARTO dark basemap ── */
-const MAP_STYLE = {
+// Added 'any' type here to satisfy MapLibre's strict StyleSpecification requirements
+const MAP_STYLE: any = {
   version: 8,
   glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
   sources: {
@@ -21,37 +22,9 @@ const MAP_STYLE = {
   layers: [{ id: 'basemap', type: 'raster', source: 'carto' }],
 };
 
-/* ── Patiala centre ── */
-const LNG = 76.3869;
-const LAT = 30.3398;
-
-/* ── Generate realistic AQI heatmap points around Patiala ── */
-function generateHeatPoints() {
-  const points = [];
-  const rings = [
-    { count: 1,   radius: 0,    weightRange: [0.95, 1.0]  },   // exact centre – very high
-    { count: 8,   radius: 0.03, weightRange: [0.85, 0.97] },
-    { count: 16,  radius: 0.07, weightRange: [0.70, 0.90] },
-    { count: 24,  radius: 0.13, weightRange: [0.50, 0.75] },
-    { count: 32,  radius: 0.22, weightRange: [0.30, 0.55] },
-    { count: 40,  radius: 0.35, weightRange: [0.12, 0.32] },
-    { count: 48,  radius: 0.52, weightRange: [0.05, 0.15] },
-  ];
-
-  rings.forEach(({ count, radius, weightRange }) => {
-    for (let i = 0; i < count; i++) {
-      const angle = (i / count) * 2 * Math.PI + (Math.random() * 0.4 - 0.2);
-      const r = radius * (0.85 + Math.random() * 0.3);
-      const lng = LNG + r * Math.cos(angle) * 1.3;
-      const lat = LAT + r * Math.sin(angle);
-      const w = weightRange[0] + Math.random() * (weightRange[1] - weightRange[0]);
-      points.push({ type: 'Feature', geometry: { type: 'Point', coordinates: [lng, lat] }, properties: { weight: w } });
-    }
-  });
-  return points;
-}
-
-const HEAT_GEOJSON = { type: 'FeatureCollection', features: generateHeatPoints() };
+/* ── Delhi Center ── */
+const LNG = 77.2090;
+const LAT = 28.6139;
 
 /* ── Layer toggles ── */
 const LAYER_OPTIONS = [
@@ -85,14 +58,52 @@ const AQI_SCALE = [
 ];
 
 export default function LiveMap() {
-  const [showPopup,  setShowPopup]  = useState(true);
   const [showPanel,  setShowPanel]  = useState(true);
   const [activeTop,  setActiveTop]  = useState('Traffic');
-  const [layers, setLayers] = useState(
+  
+  // Moved inside the component and added TypeScript generic <any>
+  const [gridGeoJSON, setGridGeoJSON] = useState<any>(null);
+
+  // Added TypeScript Record type so it knows the keys are strings and values are booleans
+  const [layers, setLayers] = useState<Record<string, boolean>>(
     LAYER_OPTIONS.reduce((a, l) => ({ ...a, [l.label]: l.on }), {})
   );
 
-  const toggle = useCallback(lbl => setLayers(p => ({ ...p, [lbl]: !p[lbl] })), []);
+  // Added 'lbl: string' type
+  const toggle = useCallback((lbl: string) => setLayers(p => ({ ...p, [lbl]: !p[lbl] })), []);
+
+  useEffect(() => {
+    Promise.all([
+      fetch('http://localhost:8000/grid').then(res => res.json()),
+      fetch('http://localhost:8000/predictions/heatmap').then(res => res.json())
+    ])
+    .then(([gridData, heatmapData]) => {
+      
+      // Typed the dictionary keys and values
+      const aqiLookup: Record<string, number> = {};
+      
+      // Typed the incoming API item as 'any'
+      heatmapData.forEach((item: any) => {
+        aqiLookup[item.grid_id] = item.predicted_aqi;
+      });
+
+      // Typed the incoming API cell as 'any'
+      const features = gridData.map((cell: any) => ({
+        type: 'Feature',
+        properties: {
+          grid_id: cell.grid_id,
+          predicted_aqi: aqiLookup[cell.grid_id] || 0
+        },
+        geometry: JSON.parse(cell.geometry)
+      }));
+
+      setGridGeoJSON({
+        type: 'FeatureCollection',
+        features: features
+      });
+    })
+    .catch(err => console.error("Error fetching backend map data:", err));
+  }, []);
 
   return (
     <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/[0.07]"
@@ -125,84 +136,34 @@ export default function LiveMap() {
         mapStyle={MAP_STYLE}
         attributionControl={false}
       >
-        {/* Real Heatmap Layer */}
-        <Source id="aqi-heat" type="geojson" data={HEAT_GEOJSON}>
-          <Layer
-            id="aqi-heatmap"
-            type="heatmap"
-            paint={{
-              /* Kernel radius grows with zoom */
-              'heatmap-radius': [
-                'interpolate', ['linear'], ['zoom'],
-                7,  40,
-                9,  70,
-                11, 110,
-                13, 160,
-              ],
-              /* Weight = data property */
-              'heatmap-weight': ['interpolate', ['linear'], ['get', 'weight'], 0, 0, 1, 1],
-              /* Intensity boosts with zoom */
-              'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 7, 0.8, 13, 2.2],
-              /* Colour ramp: green → yellow → orange → red → purple */
-              'heatmap-color': [
-                'interpolate', ['linear'], ['heatmap-density'],
-                0,    'rgba(0,0,0,0)',
-                0.10, 'rgba(34,197,94,0.6)',
-                0.28, 'rgba(132,204,22,0.7)',
-                0.45, 'rgba(234,179,8,0.8)',
-                0.62, 'rgba(249,115,22,0.88)',
-                0.78, 'rgba(239,68,68,0.92)',
-                0.90, 'rgba(185,28,28,0.95)',
-                1.0,  'rgba(109,40,217,1)',
-              ],
-              'heatmap-opacity': 0.88,
-            }}
-          />
-        </Source>
-
-        {/* Marker */}
-        <Marker longitude={LNG} latitude={LAT} anchor="bottom">
-          <div className="flex flex-col items-center cursor-pointer" onClick={() => setShowPopup(true)}>
-            <div className="w-5 h-5 rounded-full border-[3px] border-white shadow-2xl"
-                 style={{ background: '#3b82f6', boxShadow: '0 0 14px rgba(59,130,246,0.9)' }} />
-            <div className="w-0.5 h-3 bg-white/50" />
-          </div>
-        </Marker>
-
-        {/* Popup */}
-        {showPopup && (
-          <Popup longitude={LNG} latitude={LAT} anchor="left" offset={[16, -18]}
-                 closeOnClick={false} onClose={() => setShowPopup(false)}>
-            <div className="rounded-2xl p-3.5 min-w-[172px] shadow-2xl border border-white/12"
-                 style={{ background: 'rgba(10,16,32,0.97)', backdropFilter: 'blur(16px)' }}>
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <div>
-                  <p className="text-[12px] font-bold text-white leading-tight">Sector 7, Patiala</p>
-                  <p className="text-[10px] text-slate-400 mt-0.5">Urban Estate · Punjab</p>
-                </div>
-                <button onClick={() => setShowPopup(false)} className="text-slate-600 hover:text-white transition-colors mt-0.5">
-                  <X size={11} />
-                </button>
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <p className="font-display font-black text-2xl" style={{ color: '#f97316' }}>232</p>
-                <div>
-                  <p className="text-[9px] text-slate-400 leading-none">AQI</p>
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md mt-0.5 inline-block"
-                        style={{ background: 'rgba(249,115,22,0.2)', color: '#f97316' }}>Poor</span>
-                </div>
-              </div>
-              <div className="border-t border-white/[0.08] pt-2 space-y-0.5">
-                <p className="text-[10px] text-slate-500">30.33°N &nbsp; 76.38°E</p>
-              </div>
-            </div>
-          </Popup>
+        {gridGeoJSON && (
+          <Source id="delhi-grid-source" type="geojson" data={gridGeoJSON}>
+            <Layer
+              id="delhi-grid-layer"
+              type="fill"
+              paint={{
+                'fill-color': [
+                  'interpolate', ['linear'], ['get', 'predicted_aqi'],
+                  0,   '#22c55e', 
+                  50,  '#84cc16', 
+                  100, '#eab308', 
+                  150, '#fb923c', 
+                  200, '#f97316', 
+                  250, '#ef4444', 
+                  300, '#b91c1c', 
+                  350, '#7c3aed'  
+                ],
+                'fill-opacity': 0.65,
+                'fill-outline-color': 'rgba(255, 255, 255, 0.05)' 
+              }}
+            />
+          </Source>
         )}
       </Map>
 
       {/* ── Zoom controls ── */}
       <div className="absolute top-14 left-3 z-20 flex flex-col gap-1">
-        {[<Plus size={13}/>, <Minus size={13}/>].map((icon, i) => (
+        {[<Plus key="plus" size={13}/>, <Minus key="minus" size={13}/>].map((icon, i) => (
           <button key={i}
             className="w-8 h-8 rounded-xl flex items-center justify-center text-slate-400
                        hover:text-white transition-all border border-white/[0.09] shadow-lg"
@@ -274,26 +235,6 @@ export default function LiveMap() {
               <span className="text-[9px] text-slate-400 font-medium w-6">{label}</span>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* ── Bottom timeline ── */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 px-5 pt-12 pb-3.5"
-           style={{ background: 'linear-gradient(to top, rgba(7,13,26,0.96) 55%, transparent)' }}>
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-[11px] text-slate-600 font-medium">Yesterday</span>
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-sm shadow-cyan-500/60" />
-            <span className="text-[11px] font-bold text-cyan-300">Today</span>
-          </div>
-          <span className="text-[11px] text-slate-600 font-medium">Tomorrow</span>
-        </div>
-        <div className="relative h-[3px] rounded-full" style={{ background: 'rgba(255,255,255,0.07)' }}>
-          <div className="absolute left-0 right-1/2 h-full rounded-l-full"
-               style={{ background: 'linear-gradient(to right, rgba(30,41,59,0.8), #06b6d4)' }} />
-          <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-                          w-4 h-4 rounded-full border-2 border-[#070d1a] cursor-grab"
-               style={{ background: '#06b6d4', boxShadow: '0 0 12px rgba(6,182,212,0.7)' }} />
         </div>
       </div>
     </div>
