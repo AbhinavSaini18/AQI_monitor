@@ -54,6 +54,8 @@ def fetch_aqicn_reading(lat, lon):
             "pm10": iaqi.get("pm10", {}).get("v"),
             "no2": iaqi.get("no2", {}).get("v"),
             "so2": iaqi.get("so2", {}).get("v"),
+            "co": iaqi.get("co", {}).get("v"),
+            "o3": iaqi.get("o3", {}).get("v"),
         }
     except Exception as e:
         print(f"  live call failed ({e}), using fallback data")
@@ -62,8 +64,8 @@ def insert_reading(grid_id, reading):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-        INSERT INTO sensor_readings (grid_id, timestamp, aqi, pm2_5, pm10, no2, so2)
-        VALUES (%s, NOW(), %s, %s, %s, %s, %s);
+        INSERT INTO sensor_readings (grid_id, timestamp, aqi, pm2_5, pm10, no2, so2, co, o3)
+        VALUES (%s, NOW(), %s, %s, %s, %s, %s, %s, %s);
     """, (
         grid_id,
         reading["aqi"],
@@ -71,6 +73,8 @@ def insert_reading(grid_id, reading):
         reading["pm10"],
         reading["no2"],
         reading["so2"],
+        reading.get("co"),
+        reading.get("o3"),
     ))
     conn.commit()
     cur.close()

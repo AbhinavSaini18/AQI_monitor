@@ -3,11 +3,13 @@ import psycopg2
 from psycopg2.extras import execute_values
 import json
 import os
+import os
+from dotenv import load_dotenv
 import pandas as pd
 # Import your live SQL database join feature function from feature_matrix.py
 from feature_matrix import build_ml_matrix
-
-DB_CONFIG = {"dbname": "oorja_aqi", "user": "postgres", "password": "password", "host": "localhost"}
+load_dotenv()
+DB_CONFIG = {"dbname": os.getenv("DB_NAME"), "user": os.getenv("DB_USER"), "password": os.getenv("DB_PASSWORD"), "host": os.getenv("DB_HOST")}
 
 def run_predictions():
     # 1. Fetch live metrics directly from your friend's database tables
@@ -23,7 +25,6 @@ def run_predictions():
         'aqi_roll_mean_6h', 'aqi_roll_mean_24h', 'aqi_roll_std_24h',
         'hour_sin', 'hour_cos', 'month_sin', 'month_cos'
     ]
-    
     X_live = latest_snapshots[feature_cols]
     
     # 2. Load the trained XGBoost json files from their models folder path
@@ -51,8 +52,7 @@ def run_predictions():
         insert_records.append((grid_id, current_time + pd.Timedelta(hours=72), int(p72[idx]), attr, 0.71))
         
     conn = psycopg2.connect(**DB_CONFIG); cursor = conn.cursor()
-    query = """INSERT INTO ai_predictions (grid_id, target_timestamp, predicted_aqi, source_attribution, confidence_score) VALUES %s 
-               ON CONFLICT (grid_id, target_timestamp) DO UPDATE SET predicted_aqi=EXCLUDED.predicted_aqi, source_attribution=EXCLUDED.source_attribution, confidence_score=EXCLUDED.confidence_score;"""
+    query = """INSERT INTO ai_predictions (grid_id, target_timestamp, predicted_aqi, source_attribution, confidence_score) VALUES %s;"""
     execute_values(cursor, query, insert_records); conn.commit(); cursor.close(); conn.close()
     print("Predictions committed cleanly to ai_predictions table.")
 

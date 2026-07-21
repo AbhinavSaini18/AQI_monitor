@@ -1,16 +1,16 @@
 import subprocess
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import datetime
+import os
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
 
 def run_script(script_name):
-    # Print the current time and which script is starting
     print(f"[{datetime.now()}] Starting {script_name}...")
-    
-    # subprocess.run acts exactly like you typing into the terminal
-    subprocess.run(["python", f"ingestion/{script_name}"])
-    
+    script_path = SCRIPT_DIR / script_name
+    subprocess.run(["python", str(script_path)])
     print(f"[{datetime.now()}] Finished {script_name}\n")
-
 def run_all_workers():
     print(f"--- BATCH RUN STARTED: {datetime.now()} ---")
     run_script("ingest_aqicn.py")

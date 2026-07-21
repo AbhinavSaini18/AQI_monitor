@@ -1,14 +1,10 @@
 import pandas as pd
 import numpy as np
 import psycopg2
-
-DB_CONFIG = {
-    "dbname": "oorja_aqi",
-    "user": "postgres",
-    "password": "password",  # Consistent password alignment
-    "host": "localhost",
-    "port": 5432
-}
+import os
+from dotenv import load_dotenv
+load_dotenv()
+DB_CONFIG = {"dbname": os.getenv("DB_NAME"), "user": os.getenv("DB_USER"), "password": os.getenv("DB_PASSWORD"), "host": os.getenv("DB_HOST")}
 
 def build_ml_matrix():
     """
@@ -20,26 +16,26 @@ def build_ml_matrix():
     print("Fetching live backend metric streams from database...")
     # SQL query joining sensor, weather, and traffic data streams by grid_id + hour timestamps
     query = """
-        SELECT 
-            f.grid_id,
-            f.timestamp,
-            f.pm25 AS "PM2.5",
-            f.pm10 AS "PM10",
-            f.no2 AS "NO2",
-            f.so2 AS "SO2",
-            f.co AS "CO",
-            f.o3 AS "O3",
-            f.aqi AS "AQI",
-            w.temperature,
-            w.wind_speed,
-            w.wind_direction,
-            t.congestion_index,
-            t.average_speed
-        FROM grid_features f
-        LEFT JOIN weather_metrics w ON f.grid_id = w.grid_id AND DATE_TRUNC('hour', f.timestamp) = DATE_TRUNC('hour', w.timestamp)
-        LEFT JOIN traffic_metrics t ON f.grid_id = t.grid_id AND DATE_TRUNC('hour', f.timestamp) = DATE_TRUNC('hour', t.timestamp)
-        WHERE f.timestamp >= NOW() - INTERVAL '72 hours'
-        ORDER BY f.grid_id, f.timestamp;
+            SELECT 
+                f.grid_id,
+                f.timestamp,
+                f.pm2_5 AS "PM2.5",
+                f.pm10 AS "PM10",
+                f.no2 AS "NO2",
+                f.co AS "CO",
+                f.so2 AS "SO2",
+                f.o3 AS "O3",
+                f.aqi AS "AQI",
+                w.temperature,
+                w.wind_speed,
+                w.wind_direction,
+                t.congestion_index,
+                t.average_speed
+            FROM sensor_readings f
+            LEFT JOIN weather_metrics w ON f.grid_id = w.grid_id AND DATE_TRUNC('hour', f.timestamp) = DATE_TRUNC('hour', w.timestamp)
+            LEFT JOIN traffic_metrics t ON f.grid_id = t.grid_id AND DATE_TRUNC('hour', f.timestamp) = DATE_TRUNC('hour', t.timestamp)
+            WHERE f.timestamp >= NOW() - INTERVAL '72 hours'
+            ORDER BY f.grid_id, f.timestamp;
     """
     
     df = pd.read_sql_query(query, conn)
@@ -51,11 +47,7 @@ def build_ml_matrix():
         
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     df = df.sort_values(by=['grid_id', 'timestamp']).reset_index(drop=True)
-    
-    # Fill in fallback parameters for unpopulated fields (e.g., mock entries or defaults)
-    # CO and O3 defaults used if your friend's ingestion skips them initially
-    if 'CO' not in df.columns: df['CO'] = 1.0
-    if 'O3' not in df.columns: df['O3'] = 40.0
+
     
     # Forward-fill gaps per spatial grid tracking spine
     numeric_cols = df.select_dtypes(include=[np.number]).columns
