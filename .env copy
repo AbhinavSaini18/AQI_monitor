@@ -1,0 +1,13 @@
+# Database Credentials
+DB_USER=""
+DB_PASSWORD=""
+DB_NAME=""
+
+# pgAdmin UI Credentials
+PGADMIN_EMAIL=""
+PGADMIN_PASSWORD=""
+
+AQICN_TOKEN=""
+OPENWEATHER_KEY=""
+TOMTOM_KEY=""
+FIRMS_MAP_KEY=""
