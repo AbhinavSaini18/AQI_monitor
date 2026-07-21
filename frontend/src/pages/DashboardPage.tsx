@@ -10,7 +10,7 @@ import LiveMap from '../components/map/LiveMap';
 interface DashboardPageProps {
   aqi: number;
   trend: number;
-  weather: { temp: number; humidity: number; windSpeed: number; windDir: string; visibility: number; pressure: number };
+  weather: { temp: number; humidity: number; windSpeed: number; windDir: string; visibility: number; pressure: number; uvIndex: number };
 }
 
 export default function DashboardPage({ aqi, trend, weather }: DashboardPageProps) {
@@ -19,7 +19,7 @@ export default function DashboardPage({ aqi, trend, weather }: DashboardPageProp
       {/* Top row: AQI + Weather — items-start prevents weather stretching to AQI height */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-start">
         <div className="lg:col-span-1">
-          <CurrentAQIPanel aqi={aqi} city="Patiala" trend={trend} />
+          <CurrentAQIPanel aqi={aqi} city="Delhi" trend={trend} />
         </div>
         <div className="lg:col-span-2">
           <WeatherPanel {...weather} />

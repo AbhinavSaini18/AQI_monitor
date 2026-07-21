@@ -29,11 +29,12 @@ function createIcon(aqi: number, selected: boolean): L.DivIcon {
 function createHeatCircle(aqi: number): L.Circle {
   const color = getAQIColor(aqi);
   return L.circle([0, 0], {
-    radius: Math.max(300, (aqi / 250) * 900),
+    radius: Math.max(2200, (aqi / 300) * 4200),
     color,
+    weight: 2,
+    opacity: 0.55,
     fillColor: color,
-    fillOpacity: 0.18,
-    stroke: false,
+    fillOpacity: 0.42,
   });
 }
 
@@ -56,10 +57,20 @@ export default function HeatMap({ onLocationSelect }: HeatMapProps) {
       attributionControl: true,
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap &copy; CARTO',
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri, Maxar, Earthstar Geographics',
       maxZoom: 19,
     }).addTo(map);
+
+    // Street labels overlay for Google-Maps-style readability
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png', {
+      attribution: '',
+      maxZoom: 19,
+      pane: 'shadowPane',
+    }).addTo(map);
+
+    const bounds = L.latLngBounds(heatmapLocations.map((l) => [l.lat, l.lng]));
+    map.fitBounds(bounds.pad(0.25), { animate: false });
 
     mapRef.current = map;
 
@@ -145,8 +156,8 @@ export default function HeatMap({ onLocationSelect }: HeatMapProps) {
     <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-white font-semibold text-sm">Live Air Quality Map — Patiala</h3>
-          <p className="text-slate-500 text-xs mt-0.5">12 monitoring stations · Real-time · OpenStreetMap</p>
+          <h3 className="text-white font-semibold text-sm">Live Air Quality Map — Delhi NCR</h3>
+          <p className="text-slate-500 text-xs mt-0.5">28 monitoring stations · Real-time · Satellite imagery</p>
         </div>
         <button
           onClick={() => setShowHeat(!showHeat)}
@@ -161,7 +172,7 @@ export default function HeatMap({ onLocationSelect }: HeatMapProps) {
       <div
         ref={containerRef}
         className="w-full rounded-xl overflow-hidden border border-slate-700/40"
-        style={{ height: '420px', background: '#0f172a', isolation: 'isolate', zIndex: 0 }}
+        style={{ height: '480px', background: '#1a2e1a', isolation: 'isolate', zIndex: 0 }}
       />
 
       {/* Legend */}

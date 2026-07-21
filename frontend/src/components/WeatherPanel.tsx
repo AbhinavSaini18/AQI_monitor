@@ -1,4 +1,4 @@
-import { Wind, Droplets, Thermometer, Eye, Sunrise, Sunset, Gauge, Navigation } from 'lucide-react';
+import { Wind, Droplets, Thermometer, Eye, Sunrise, Sunset, Gauge, Navigation, Sun, CloudSun } from 'lucide-react';
 
 interface WeatherPanelProps {
   temp: number;
@@ -7,24 +7,30 @@ interface WeatherPanelProps {
   windDir: string;
   visibility: number;
   pressure: number;
+  uvIndex: number;
 }
 
-export default function WeatherPanel({ temp, humidity, windSpeed, windDir, visibility, pressure }: WeatherPanelProps) {
+export default function WeatherPanel({ temp, humidity, windSpeed, windDir, visibility, pressure, uvIndex }: WeatherPanelProps) {
+  const uvLevel = uvIndex <= 2 ? 'Low' : uvIndex <= 5 ? 'Moderate' : uvIndex <= 7 ? 'High' : uvIndex <= 10 ? 'Very High' : 'Extreme';
+  const uvColor = uvIndex <= 2 ? 'text-green-400' : uvIndex <= 5 ? 'text-yellow-400' : uvIndex <= 7 ? 'text-orange-400' : 'text-red-400';
+
   const items = [
-    { icon: Thermometer, label: 'Temperature', value: `${temp}°C`, sub: 'Feels like 22°C', color: 'text-orange-400' },
+    { icon: Thermometer, label: 'Temperature', value: `${temp}°C`, sub: 'Feels like 24°C', color: 'text-orange-400' },
     { icon: Droplets, label: 'Humidity', value: `${humidity}%`, sub: 'Dew point 17°C', color: 'text-cyan-400' },
     { icon: Eye, label: 'Visibility', value: `${visibility} km`, sub: 'Reduced by haze', color: 'text-slate-300' },
     { icon: Gauge, label: 'Pressure', value: `${pressure} hPa`, sub: 'Stable', color: 'text-blue-400' },
+    { icon: Sun, label: 'UV Index', value: `${uvIndex} · ${uvLevel}`, sub: uvIndex <= 5 ? 'Minimal protection' : 'Use sunscreen', color: uvColor },
+    { icon: CloudSun, label: 'Sky Condition', value: 'Hazy', sub: 'Smoke + fog layer', color: 'text-slate-300' },
   ];
 
   return (
     <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5 h-full">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-white font-semibold text-sm">Weather Conditions</h3>
-        <span className="text-xs text-slate-500">Patiala · Live</span>
+        <span className="text-xs text-slate-500">Delhi · Live</span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {items.map((item) => {
           const Icon = item.icon;
           return (

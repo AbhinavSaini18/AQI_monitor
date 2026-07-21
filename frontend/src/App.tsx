@@ -13,16 +13,17 @@ import type { NavPage } from './types';
 
 export default function App() {
   const [page, setPage] = useState<NavPage>('dashboard');
-  const [aqi, setAqi] = useState(143);
-  const [trend, setTrend] = useState(12);
+  const [aqi, setAqi] = useState(312);
+  const [trend, setTrend] = useState(-8);
   const [lastUpdated, setLastUpdated] = useState(new Date());
   const [weather] = useState({
-    temp: 24,
-    humidity: 62,
-    windSpeed: 8,
+    temp: 22,
+    humidity: 68,
+    windSpeed: 6,
     windDir: 'NW',
-    visibility: 4.5,
-    pressure: 1015,
+    visibility: 2.8,
+    pressure: 1018,
+    uvIndex: 4,
   });
 
   // Simulate live AQI updates
@@ -30,7 +31,7 @@ export default function App() {
     const interval = setInterval(() => {
       setAqi((prev) => {
         const delta = Math.floor(Math.random() * 7) - 3;
-        const next = Math.max(80, Math.min(250, prev + delta));
+        const next = Math.max(180, Math.min(450, prev + delta));
         setTrend(next - prev);
         return next;
       });

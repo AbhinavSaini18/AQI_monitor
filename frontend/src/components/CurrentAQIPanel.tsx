@@ -26,7 +26,7 @@ export default function CurrentAQIPanel({ aqi, city, trend }: CurrentAQIPanelPro
         <div className="flex items-start justify-between mb-2">
           <div>
             <p className="text-slate-400 text-sm font-medium">Current AQI · {city}</p>
-            <p className="text-slate-500 text-xs mt-0.5">Qila Mubarak Station · Live</p>
+            <p className="text-slate-500 text-xs mt-0.5">Connaught Place Station · Live</p>
           </div>
           <div
             className="px-3 py-1.5 rounded-full text-xs font-bold border"
@@ -97,7 +97,7 @@ export default function CurrentAQIPanel({ aqi, city, trend }: CurrentAQIPanelPro
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             </div>
             <p className="text-slate-500 text-[10px]">Sensors</p>
-            <p className="text-white text-sm font-semibold">12/12</p>
+            <p className="text-white text-sm font-semibold">24/24</p>
           </div>
         </div>
       </div>

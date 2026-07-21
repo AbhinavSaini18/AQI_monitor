@@ -7,15 +7,15 @@ interface Message {
 }
 
 const suggested = [
-  'What is the current AQI in Patiala?',
+  'What is the current AQI in Delhi?',
   'Which areas have the worst air quality right now?',
   'Why is the AQI rising today?',
   'Should I go for a run this evening?',
 ];
 
 const responses: Record<string, string> = {
-  'What is the current AQI in Patiala?': 'The current AQI in Patiala is 143, which falls in the "Poor" category. The dominant pollutant is PM2.5 at 65 µg/m³. Sensitive groups should limit prolonged outdoor exertion.',
-  'Which areas have the worst air quality right now?': 'The worst air quality is in Connaught Place (AQI 232, Very Poor) and Ranaur (AQI 201, Very Poor). The best air quality is in Pehlana (AQI 89, Moderate) and Bhadson (AQI 98, Moderate).',
+  'What is the current AQI in Delhi?': 'The current AQI in Delhi is 312, which falls in the "Very Poor" category. The dominant pollutant is PM2.5 at 168 µg/m³. Sensitive groups should avoid outdoor activity and everyone should limit prolonged exertion.',
+  'Which areas have the worst air quality right now?': 'The worst air quality is in Anand Vihar (AQI 412, Severe) and Wazirpur (AQI 395, Very Poor). The best air quality is in Aya Nagar (AQI 198, Poor) and Lodhi Road (AQI 224, Poor).',
   'Why is the AQI rising today?': 'The AQI is rising due to three factors: (1) a temperature inversion trapping pollutants near the surface, (2) NW winds carrying smoke from crop burning contributing ~35% of PM2.5, and (3) peak traffic hours. Expect improvement by tomorrow morning.',
   'Should I go for a run this evening?': 'Not recommended. AQI is expected to peak at 195 around 6 PM (Very Poor). If you must exercise outdoors, wear an N95 mask and choose early morning (before 7 AM) when AQI drops below 110. Indoor exercise is the safest option today.',
 };
@@ -41,7 +41,7 @@ export default function AssistantPage() {
     setInput('');
 
     setTimeout(() => {
-      const reply = responses[text] || "I'm analyzing that question based on current sensor data. Based on the latest readings, the AQI in Patiala is 143 (Poor) with PM2.5 as the dominant pollutant. Would you like specific health advice or area-wise breakdown?";
+      const reply = responses[text] || "I'm analyzing that question based on current sensor data. Based on the latest readings, the AQI in Delhi is 312 (Very Poor) with PM2.5 as the dominant pollutant. Would you like specific health advice or area-wise breakdown?";
       setMessages((m) => [...m, { role: 'assistant', text: reply }]);
     }, 600);
   };
