@@ -63,3 +63,4 @@ python3 run_pipeline.py
 cd rag
 python3 chat_pipeline.py
 ```
+Note: To setup the frontend follow setup.txt
