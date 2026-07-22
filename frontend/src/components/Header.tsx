@@ -1,58 +1,78 @@
-import { Menu, Search, Bell, Settings } from 'lucide-react';
-import type { NavPage } from '../types';
+import { Menu, Activity, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
+  activePage: string;
+  onNavigate: (page: string) => void;
   onMenuClick: () => void;
-  activePage: NavPage;
-  lastUpdated: Date;
+  lastUpdated: string;
+  aqi: number;
+  locationName: string;
+  backendHealthy: boolean;
 }
 
-const pageTitles: Record<NavPage, { title: string; subtitle: string }> = {
-  dashboard: { title: 'City Air Quality Dashboard', subtitle: 'Real-time monitoring & AI insights' },
-  map: { title: 'Live Air Quality Map', subtitle: 'Interactive heatmap & monitoring stations' },
-  predictions: { title: 'AQI Predictions', subtitle: 'AI-powered 72-hour forecasts' },
-  attribution: { title: 'Source Attribution', subtitle: 'AI analysis of pollution sources' },
-  advisory: { title: 'Health Advisory', subtitle: 'Personalized protection recommendations' },
-  reports: { title: 'Reports & Analytics', subtitle: 'Historical trends and compliance' },
-  assistant: { title: 'AI Assistant', subtitle: 'Ask questions about air quality' },
-};
+const TABS = ['DASHBOARD', 'MAP', 'PREDICTIONS', 'ATTRIBUTION', 'ADVISORY', 'REPORTS', 'ASSISTANT'];
 
-export default function Header({ onMenuClick, activePage, lastUpdated }: HeaderProps) {
-  const { title, subtitle } = pageTitles[activePage];
-  const timeStr = lastUpdated.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+export default function Header({ 
+  activePage, 
+  onNavigate, 
+  onMenuClick, 
+  lastUpdated, 
+  aqi, 
+  locationName,
+  backendHealthy 
+}: HeaderProps) {
+  
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-800/60 px-4 sm:px-6 lg:px-8 py-4 relative isolate">
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3 min-w-0">
-          <button
+    <header className="bg-white border-b border-neutral-300 rounded-none shadow-sm z-10">
+      <div className="flex items-center justify-between px-4 h-16">
+        
+        <div className="flex items-center gap-4">
+          <button 
             onClick={onMenuClick}
-            className="lg:hidden p-2 rounded-lg bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 transition"
+            className="md:hidden p-2 text-neutral-600 hover:text-neutral-900 rounded-none focus:outline-none"
           >
-            <Menu className="w-5 h-5" />
+            <Menu className="w-6 h-6" />
           </button>
-          <div className="min-w-0">
-            <h2 className="text-white font-bold text-lg sm:text-xl truncate">{title}</h2>
-            <p className="text-slate-400 text-xs sm:text-sm truncate hidden sm:block">{subtitle}</p>
+          <div className="hidden md:flex items-center gap-6 overflow-x-auto">
+            {TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => onNavigate(tab)}
+                className={`uppercase text-sm font-bold tracking-wider py-4 border-b-2 rounded-none transition-colors whitespace-nowrap ${
+                  activePage === tab 
+                    ? 'border-neutral-900 text-neutral-900' 
+                    : 'border-transparent text-neutral-500 hover:text-neutral-700'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden md:flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700/50">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs text-slate-300 font-medium">Updated {timeStr}</span>
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-neutral-500 uppercase">SYS STATUS</span>
+            <div className={`w-3 h-3 ${backendHealthy ? 'bg-green-500' : 'bg-red-500'} animate-pulse rounded-none`} />
           </div>
-          <button className="p-2 rounded-lg bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 transition">
-            <Search className="w-5 h-5" />
-          </button>
-          <button className="relative p-2 rounded-lg bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 transition">
-            <Bell className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-orange-400" />
-          </button>
-          <button className="p-2 rounded-lg bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 transition hidden sm:block">
-            <Settings className="w-5 h-5" />
-          </button>
+
+          <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">{locationName} AQI</span>
+            <span className={`text-xl font-black ${aqi > 300 ? 'text-purple-600' : aqi > 200 ? 'text-red-500' : aqi > 100 ? 'text-orange-500' : aqi > 50 ? 'text-yellow-500' : 'text-green-500'}`}>
+              {aqi > 0 ? aqi : '--'}
+            </span>
+            <Activity className="w-4 h-4 text-neutral-400" />
+          </div>
+
+          <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase">
+            <RefreshCw className="w-4 h-4" />
+            <span>UPDATED: {lastUpdated || '--:--'}</span>
+          </div>
+          </div>
         </div>
+
       </div>
     </header>
   );

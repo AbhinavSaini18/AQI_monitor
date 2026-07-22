@@ -1,39 +1,78 @@
-import { LayoutDashboard, Map, TrendingUp, PieChart, ShieldAlert, Sparkles } from 'lucide-react';
-import type { NavPage } from '../types';
+
+import { 
+  X,
+  LayoutDashboard, 
+  Map, 
+  TrendingUp, 
+  PieChart, 
+  ShieldAlert, 
+  FileText, 
+  Bot
+} from 'lucide-react';
 
 interface MobileNavProps {
-  active: NavPage;
-  onNavigate: (page: NavPage) => void;
+  activePage: string;
+  onNavigate: (page: string) => void;
+  onClose: () => void;
 }
 
-const items: { id: NavPage; icon: typeof LayoutDashboard; label: string }[] = [
-  { id: 'dashboard', icon: LayoutDashboard, label: 'Home' },
-  { id: 'map', icon: Map, label: 'Map' },
-  { id: 'predictions', icon: TrendingUp, label: 'Forecast' },
-  { id: 'attribution', icon: PieChart, label: 'Sources' },
-  { id: 'advisory', icon: ShieldAlert, label: 'Health' },
-  { id: 'assistant', icon: Sparkles, label: 'AI' },
+const navItems = [
+  { id: 'DASHBOARD', label: 'DASHBOARD', icon: LayoutDashboard },
+  { id: 'MAP', label: 'LIVE MAP', icon: Map },
+  { id: 'PREDICTIONS', label: 'PREDICTIONS', icon: TrendingUp },
+  { id: 'ATTRIBUTION', label: 'ATTRIBUTION', icon: PieChart },
+  { id: 'ADVISORY', label: 'ADVISORY', icon: ShieldAlert },
+  { id: 'REPORTS', label: 'REPORTS', icon: FileText },
+  { id: 'ASSISTANT', label: 'AI ASSISTANT', icon: Bot },
 ];
 
-export default function MobileNav({ active, onNavigate }: MobileNavProps) {
+export default function MobileNav({ activePage, onNavigate, onClose }: MobileNavProps) {
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-slate-900/90 backdrop-blur-xl border-t border-slate-800/60 px-1 py-1.5 flex items-center justify-around">
-      {items.map((item) => {
-        const Icon = item.icon;
-        const isActive = active === item.id;
-        return (
-          <button
-            key={item.id}
-            onClick={() => onNavigate(item.id)}
-            className={`flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-lg transition ${
-              isActive ? 'text-cyan-300' : 'text-slate-500'
-            }`}
-          >
-            <Icon className="w-5 h-5" />
-            <span className="text-[10px] font-medium">{item.label}</span>
-          </button>
-        );
-      })}
-    </nav>
+    <div className="h-full flex flex-col bg-neutral-900 text-white rounded-none">
+      <div className="h-16 flex items-center justify-between px-6 border-b border-neutral-800">
+        <h1 className="text-xl font-bold uppercase tracking-widest text-white">
+          DELHI AQI
+        </h1>
+        <button 
+          onClick={onClose}
+          className="p-2 text-neutral-400 hover:text-white rounded-none"
+        >
+          <X className="w-6 h-6" />
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-y-auto py-6">
+        <nav className="space-y-1">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = activePage === item.id;
+            
+            return (
+              <button
+                key={item.id}
+                onClick={() => {
+                  onNavigate(item.id);
+                  onClose();
+                }}
+                className={`w-full flex items-center px-6 py-4 text-sm font-semibold uppercase tracking-wider transition-colors rounded-none ${
+                  isActive 
+                    ? 'bg-white text-neutral-900' 
+                    : 'text-neutral-400 hover:bg-neutral-800 hover:text-white'
+                }`}
+              >
+                <Icon className={`w-6 h-6 mr-4 ${isActive ? 'text-neutral-900' : 'text-neutral-400'}`} />
+                {item.label}
+              </button>
+            );
+          })}
+        </nav>
+      </div>
+      
+      <div className="p-6 border-t border-neutral-800">
+        <div className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+          SYSTEM STATUS: ONLINE
+        </div>
+      </div>
+    </div>
   );
 }

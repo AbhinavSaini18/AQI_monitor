@@ -1,0 +1,8108 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3007",
+        "grid_x": 7,
+        "grid_y": 0,
+        "predicted_aqi": 175,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.4041
+            ],
+            [
+              77.084,
+              28.4041
+            ],
+            [
+              77.084,
+              28.4311
+            ],
+            [
+              77.0533,
+              28.4311
+            ],
+            [
+              77.0533,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3008",
+        "grid_x": 8,
+        "grid_y": 0,
+        "predicted_aqi": 186,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.4041
+            ],
+            [
+              77.1147,
+              28.4041
+            ],
+            [
+              77.1147,
+              28.4311
+            ],
+            [
+              77.084,
+              28.4311
+            ],
+            [
+              77.084,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3009",
+        "grid_x": 9,
+        "grid_y": 0,
+        "predicted_aqi": 196,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.4041
+            ],
+            [
+              77.1454,
+              28.4041
+            ],
+            [
+              77.1454,
+              28.4311
+            ],
+            [
+              77.1147,
+              28.4311
+            ],
+            [
+              77.1147,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3010",
+        "grid_x": 10,
+        "grid_y": 0,
+        "predicted_aqi": 204,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.4041
+            ],
+            [
+              77.1761,
+              28.4041
+            ],
+            [
+              77.1761,
+              28.4311
+            ],
+            [
+              77.1454,
+              28.4311
+            ],
+            [
+              77.1454,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3011",
+        "grid_x": 11,
+        "grid_y": 0,
+        "predicted_aqi": 212,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.4041
+            ],
+            [
+              77.2068,
+              28.4041
+            ],
+            [
+              77.2068,
+              28.4311
+            ],
+            [
+              77.1761,
+              28.4311
+            ],
+            [
+              77.1761,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3012",
+        "grid_x": 12,
+        "grid_y": 0,
+        "predicted_aqi": 218,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.4041
+            ],
+            [
+              77.2375,
+              28.4041
+            ],
+            [
+              77.2375,
+              28.4311
+            ],
+            [
+              77.2068,
+              28.4311
+            ],
+            [
+              77.2068,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3013",
+        "grid_x": 13,
+        "grid_y": 0,
+        "predicted_aqi": 223,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.4041
+            ],
+            [
+              77.2682,
+              28.4041
+            ],
+            [
+              77.2682,
+              28.4311
+            ],
+            [
+              77.2375,
+              28.4311
+            ],
+            [
+              77.2375,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3014",
+        "grid_x": 14,
+        "grid_y": 0,
+        "predicted_aqi": 226,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.4041
+            ],
+            [
+              77.2989,
+              28.4041
+            ],
+            [
+              77.2989,
+              28.4311
+            ],
+            [
+              77.2682,
+              28.4311
+            ],
+            [
+              77.2682,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3015",
+        "grid_x": 15,
+        "grid_y": 0,
+        "predicted_aqi": 227,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.4041
+            ],
+            [
+              77.3296,
+              28.4041
+            ],
+            [
+              77.3296,
+              28.4311
+            ],
+            [
+              77.2989,
+              28.4311
+            ],
+            [
+              77.2989,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_100_3016",
+        "grid_x": 16,
+        "grid_y": 0,
+        "predicted_aqi": 226,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.4041
+            ],
+            [
+              77.3603,
+              28.4041
+            ],
+            [
+              77.3603,
+              28.4311
+            ],
+            [
+              77.3296,
+              28.4311
+            ],
+            [
+              77.3296,
+              28.4041
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3006",
+        "grid_x": 6,
+        "grid_y": 1,
+        "predicted_aqi": 173,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.4311
+            ],
+            [
+              77.0533,
+              28.4311
+            ],
+            [
+              77.0533,
+              28.4581
+            ],
+            [
+              77.0226,
+              28.4581
+            ],
+            [
+              77.0226,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3007",
+        "grid_x": 7,
+        "grid_y": 1,
+        "predicted_aqi": 185,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.4311
+            ],
+            [
+              77.084,
+              28.4311
+            ],
+            [
+              77.084,
+              28.4581
+            ],
+            [
+              77.0533,
+              28.4581
+            ],
+            [
+              77.0533,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3008",
+        "grid_x": 8,
+        "grid_y": 1,
+        "predicted_aqi": 196,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.4311
+            ],
+            [
+              77.1147,
+              28.4311
+            ],
+            [
+              77.1147,
+              28.4581
+            ],
+            [
+              77.084,
+              28.4581
+            ],
+            [
+              77.084,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3009",
+        "grid_x": 9,
+        "grid_y": 1,
+        "predicted_aqi": 206,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.4311
+            ],
+            [
+              77.1454,
+              28.4311
+            ],
+            [
+              77.1454,
+              28.4581
+            ],
+            [
+              77.1147,
+              28.4581
+            ],
+            [
+              77.1147,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3010",
+        "grid_x": 10,
+        "grid_y": 1,
+        "predicted_aqi": 216,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.4311
+            ],
+            [
+              77.1761,
+              28.4311
+            ],
+            [
+              77.1761,
+              28.4581
+            ],
+            [
+              77.1454,
+              28.4581
+            ],
+            [
+              77.1454,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3011",
+        "grid_x": 11,
+        "grid_y": 1,
+        "predicted_aqi": 224,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.4311
+            ],
+            [
+              77.2068,
+              28.4311
+            ],
+            [
+              77.2068,
+              28.4581
+            ],
+            [
+              77.1761,
+              28.4581
+            ],
+            [
+              77.1761,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3012",
+        "grid_x": 12,
+        "grid_y": 1,
+        "predicted_aqi": 231,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.4311
+            ],
+            [
+              77.2375,
+              28.4311
+            ],
+            [
+              77.2375,
+              28.4581
+            ],
+            [
+              77.2068,
+              28.4581
+            ],
+            [
+              77.2068,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3013",
+        "grid_x": 13,
+        "grid_y": 1,
+        "predicted_aqi": 236,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.4311
+            ],
+            [
+              77.2682,
+              28.4311
+            ],
+            [
+              77.2682,
+              28.4581
+            ],
+            [
+              77.2375,
+              28.4581
+            ],
+            [
+              77.2375,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3014",
+        "grid_x": 14,
+        "grid_y": 1,
+        "predicted_aqi": 239,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.4311
+            ],
+            [
+              77.2989,
+              28.4311
+            ],
+            [
+              77.2989,
+              28.4581
+            ],
+            [
+              77.2682,
+              28.4581
+            ],
+            [
+              77.2682,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3015",
+        "grid_x": 15,
+        "grid_y": 1,
+        "predicted_aqi": 240,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.4311
+            ],
+            [
+              77.3296,
+              28.4311
+            ],
+            [
+              77.3296,
+              28.4581
+            ],
+            [
+              77.2989,
+              28.4581
+            ],
+            [
+              77.2989,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_101_3016",
+        "grid_x": 16,
+        "grid_y": 1,
+        "predicted_aqi": 239,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.4311
+            ],
+            [
+              77.3603,
+              28.4311
+            ],
+            [
+              77.3603,
+              28.4581
+            ],
+            [
+              77.3296,
+              28.4581
+            ],
+            [
+              77.3296,
+              28.4311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3005",
+        "grid_x": 5,
+        "grid_y": 2,
+        "predicted_aqi": 168,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.4581
+            ],
+            [
+              77.0226,
+              28.4581
+            ],
+            [
+              77.0226,
+              28.4851
+            ],
+            [
+              76.9919,
+              28.4851
+            ],
+            [
+              76.9919,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3006",
+        "grid_x": 6,
+        "grid_y": 2,
+        "predicted_aqi": 181,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.4581
+            ],
+            [
+              77.0533,
+              28.4581
+            ],
+            [
+              77.0533,
+              28.4851
+            ],
+            [
+              77.0226,
+              28.4851
+            ],
+            [
+              77.0226,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3007",
+        "grid_x": 7,
+        "grid_y": 2,
+        "predicted_aqi": 193,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.4581
+            ],
+            [
+              77.084,
+              28.4581
+            ],
+            [
+              77.084,
+              28.4851
+            ],
+            [
+              77.0533,
+              28.4851
+            ],
+            [
+              77.0533,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3008",
+        "grid_x": 8,
+        "grid_y": 2,
+        "predicted_aqi": 205,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.4581
+            ],
+            [
+              77.1147,
+              28.4581
+            ],
+            [
+              77.1147,
+              28.4851
+            ],
+            [
+              77.084,
+              28.4851
+            ],
+            [
+              77.084,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3009",
+        "grid_x": 9,
+        "grid_y": 2,
+        "predicted_aqi": 216,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.4581
+            ],
+            [
+              77.1454,
+              28.4581
+            ],
+            [
+              77.1454,
+              28.4851
+            ],
+            [
+              77.1147,
+              28.4851
+            ],
+            [
+              77.1147,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3010",
+        "grid_x": 10,
+        "grid_y": 2,
+        "predicted_aqi": 226,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.4581
+            ],
+            [
+              77.1761,
+              28.4581
+            ],
+            [
+              77.1761,
+              28.4851
+            ],
+            [
+              77.1454,
+              28.4851
+            ],
+            [
+              77.1454,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3011",
+        "grid_x": 11,
+        "grid_y": 2,
+        "predicted_aqi": 235,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.4581
+            ],
+            [
+              77.2068,
+              28.4581
+            ],
+            [
+              77.2068,
+              28.4851
+            ],
+            [
+              77.1761,
+              28.4851
+            ],
+            [
+              77.1761,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3012",
+        "grid_x": 12,
+        "grid_y": 2,
+        "predicted_aqi": 243,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.4581
+            ],
+            [
+              77.2375,
+              28.4581
+            ],
+            [
+              77.2375,
+              28.4851
+            ],
+            [
+              77.2068,
+              28.4851
+            ],
+            [
+              77.2068,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3013",
+        "grid_x": 13,
+        "grid_y": 2,
+        "predicted_aqi": 249,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.4581
+            ],
+            [
+              77.2682,
+              28.4581
+            ],
+            [
+              77.2682,
+              28.4851
+            ],
+            [
+              77.2375,
+              28.4851
+            ],
+            [
+              77.2375,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3014",
+        "grid_x": 14,
+        "grid_y": 2,
+        "predicted_aqi": 252,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.4581
+            ],
+            [
+              77.2989,
+              28.4581
+            ],
+            [
+              77.2989,
+              28.4851
+            ],
+            [
+              77.2682,
+              28.4851
+            ],
+            [
+              77.2682,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3015",
+        "grid_x": 15,
+        "grid_y": 2,
+        "predicted_aqi": 254,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.4581
+            ],
+            [
+              77.3296,
+              28.4581
+            ],
+            [
+              77.3296,
+              28.4851
+            ],
+            [
+              77.2989,
+              28.4851
+            ],
+            [
+              77.2989,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_102_3016",
+        "grid_x": 16,
+        "grid_y": 2,
+        "predicted_aqi": 252,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.4581
+            ],
+            [
+              77.3603,
+              28.4581
+            ],
+            [
+              77.3603,
+              28.4851
+            ],
+            [
+              77.3296,
+              28.4851
+            ],
+            [
+              77.3296,
+              28.4581
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3004",
+        "grid_x": 4,
+        "grid_y": 3,
+        "predicted_aqi": 161,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.4851
+            ],
+            [
+              76.9919,
+              28.4851
+            ],
+            [
+              76.9919,
+              28.5121
+            ],
+            [
+              76.9612,
+              28.5121
+            ],
+            [
+              76.9612,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3005",
+        "grid_x": 5,
+        "grid_y": 3,
+        "predicted_aqi": 175,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.4851
+            ],
+            [
+              77.0226,
+              28.4851
+            ],
+            [
+              77.0226,
+              28.5121
+            ],
+            [
+              76.9919,
+              28.5121
+            ],
+            [
+              76.9919,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3006",
+        "grid_x": 6,
+        "grid_y": 3,
+        "predicted_aqi": 188,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.4851
+            ],
+            [
+              77.0533,
+              28.4851
+            ],
+            [
+              77.0533,
+              28.5121
+            ],
+            [
+              77.0226,
+              28.5121
+            ],
+            [
+              77.0226,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3007",
+        "grid_x": 7,
+        "grid_y": 3,
+        "predicted_aqi": 201,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.4851
+            ],
+            [
+              77.084,
+              28.4851
+            ],
+            [
+              77.084,
+              28.5121
+            ],
+            [
+              77.0533,
+              28.5121
+            ],
+            [
+              77.0533,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3008",
+        "grid_x": 8,
+        "grid_y": 3,
+        "predicted_aqi": 214,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.4851
+            ],
+            [
+              77.1147,
+              28.4851
+            ],
+            [
+              77.1147,
+              28.5121
+            ],
+            [
+              77.084,
+              28.5121
+            ],
+            [
+              77.084,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3009",
+        "grid_x": 9,
+        "grid_y": 3,
+        "predicted_aqi": 225,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.4851
+            ],
+            [
+              77.1454,
+              28.4851
+            ],
+            [
+              77.1454,
+              28.5121
+            ],
+            [
+              77.1147,
+              28.5121
+            ],
+            [
+              77.1147,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3010",
+        "grid_x": 10,
+        "grid_y": 3,
+        "predicted_aqi": 236,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.4851
+            ],
+            [
+              77.1761,
+              28.4851
+            ],
+            [
+              77.1761,
+              28.5121
+            ],
+            [
+              77.1454,
+              28.5121
+            ],
+            [
+              77.1454,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3011",
+        "grid_x": 11,
+        "grid_y": 3,
+        "predicted_aqi": 246,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.4851
+            ],
+            [
+              77.2068,
+              28.4851
+            ],
+            [
+              77.2068,
+              28.5121
+            ],
+            [
+              77.1761,
+              28.5121
+            ],
+            [
+              77.1761,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3012",
+        "grid_x": 12,
+        "grid_y": 3,
+        "predicted_aqi": 255,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.4851
+            ],
+            [
+              77.2375,
+              28.4851
+            ],
+            [
+              77.2375,
+              28.5121
+            ],
+            [
+              77.2068,
+              28.5121
+            ],
+            [
+              77.2068,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3013",
+        "grid_x": 13,
+        "grid_y": 3,
+        "predicted_aqi": 261,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.4851
+            ],
+            [
+              77.2682,
+              28.4851
+            ],
+            [
+              77.2682,
+              28.5121
+            ],
+            [
+              77.2375,
+              28.5121
+            ],
+            [
+              77.2375,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3014",
+        "grid_x": 14,
+        "grid_y": 3,
+        "predicted_aqi": 266,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.4851
+            ],
+            [
+              77.2989,
+              28.4851
+            ],
+            [
+              77.2989,
+              28.5121
+            ],
+            [
+              77.2682,
+              28.5121
+            ],
+            [
+              77.2682,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3015",
+        "grid_x": 15,
+        "grid_y": 3,
+        "predicted_aqi": 267,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.4851
+            ],
+            [
+              77.3296,
+              28.4851
+            ],
+            [
+              77.3296,
+              28.5121
+            ],
+            [
+              77.2989,
+              28.5121
+            ],
+            [
+              77.2989,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_103_3016",
+        "grid_x": 16,
+        "grid_y": 3,
+        "predicted_aqi": 266,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.4851
+            ],
+            [
+              77.3603,
+              28.4851
+            ],
+            [
+              77.3603,
+              28.5121
+            ],
+            [
+              77.3296,
+              28.5121
+            ],
+            [
+              77.3296,
+              28.4851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3004",
+        "grid_x": 4,
+        "grid_y": 4,
+        "predicted_aqi": 167,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.5121
+            ],
+            [
+              76.9919,
+              28.5121
+            ],
+            [
+              76.9919,
+              28.5391
+            ],
+            [
+              76.9612,
+              28.5391
+            ],
+            [
+              76.9612,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3005",
+        "grid_x": 5,
+        "grid_y": 4,
+        "predicted_aqi": 181,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.5121
+            ],
+            [
+              77.0226,
+              28.5121
+            ],
+            [
+              77.0226,
+              28.5391
+            ],
+            [
+              76.9919,
+              28.5391
+            ],
+            [
+              76.9919,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3006",
+        "grid_x": 6,
+        "grid_y": 4,
+        "predicted_aqi": 195,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.5121
+            ],
+            [
+              77.0533,
+              28.5121
+            ],
+            [
+              77.0533,
+              28.5391
+            ],
+            [
+              77.0226,
+              28.5391
+            ],
+            [
+              77.0226,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3007",
+        "grid_x": 7,
+        "grid_y": 4,
+        "predicted_aqi": 208,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.5121
+            ],
+            [
+              77.084,
+              28.5121
+            ],
+            [
+              77.084,
+              28.5391
+            ],
+            [
+              77.0533,
+              28.5391
+            ],
+            [
+              77.0533,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3008",
+        "grid_x": 8,
+        "grid_y": 4,
+        "predicted_aqi": 221,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.5121
+            ],
+            [
+              77.1147,
+              28.5121
+            ],
+            [
+              77.1147,
+              28.5391
+            ],
+            [
+              77.084,
+              28.5391
+            ],
+            [
+              77.084,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3009",
+        "grid_x": 9,
+        "grid_y": 4,
+        "predicted_aqi": 234,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.5121
+            ],
+            [
+              77.1454,
+              28.5121
+            ],
+            [
+              77.1454,
+              28.5391
+            ],
+            [
+              77.1147,
+              28.5391
+            ],
+            [
+              77.1147,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3010",
+        "grid_x": 10,
+        "grid_y": 4,
+        "predicted_aqi": 246,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.5121
+            ],
+            [
+              77.1761,
+              28.5121
+            ],
+            [
+              77.1761,
+              28.5391
+            ],
+            [
+              77.1454,
+              28.5391
+            ],
+            [
+              77.1454,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3011",
+        "grid_x": 11,
+        "grid_y": 4,
+        "predicted_aqi": 257,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.5121
+            ],
+            [
+              77.2068,
+              28.5121
+            ],
+            [
+              77.2068,
+              28.5391
+            ],
+            [
+              77.1761,
+              28.5391
+            ],
+            [
+              77.1761,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3012",
+        "grid_x": 12,
+        "grid_y": 4,
+        "predicted_aqi": 266,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.5121
+            ],
+            [
+              77.2375,
+              28.5121
+            ],
+            [
+              77.2375,
+              28.5391
+            ],
+            [
+              77.2068,
+              28.5391
+            ],
+            [
+              77.2068,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3013",
+        "grid_x": 13,
+        "grid_y": 4,
+        "predicted_aqi": 274,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.5121
+            ],
+            [
+              77.2682,
+              28.5121
+            ],
+            [
+              77.2682,
+              28.5391
+            ],
+            [
+              77.2375,
+              28.5391
+            ],
+            [
+              77.2375,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3014",
+        "grid_x": 14,
+        "grid_y": 4,
+        "predicted_aqi": 279,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.5121
+            ],
+            [
+              77.2989,
+              28.5121
+            ],
+            [
+              77.2989,
+              28.5391
+            ],
+            [
+              77.2682,
+              28.5391
+            ],
+            [
+              77.2682,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3015",
+        "grid_x": 15,
+        "grid_y": 4,
+        "predicted_aqi": 281,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.5121
+            ],
+            [
+              77.3296,
+              28.5121
+            ],
+            [
+              77.3296,
+              28.5391
+            ],
+            [
+              77.2989,
+              28.5391
+            ],
+            [
+              77.2989,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_104_3016",
+        "grid_x": 16,
+        "grid_y": 4,
+        "predicted_aqi": 279,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.5121
+            ],
+            [
+              77.3603,
+              28.5121
+            ],
+            [
+              77.3603,
+              28.5391
+            ],
+            [
+              77.3296,
+              28.5391
+            ],
+            [
+              77.3296,
+              28.5121
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3004",
+        "grid_x": 4,
+        "grid_y": 5,
+        "predicted_aqi": 171,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.5391
+            ],
+            [
+              76.9919,
+              28.5391
+            ],
+            [
+              76.9919,
+              28.5661
+            ],
+            [
+              76.9612,
+              28.5661
+            ],
+            [
+              76.9612,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3005",
+        "grid_x": 5,
+        "grid_y": 5,
+        "predicted_aqi": 186,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.5391
+            ],
+            [
+              77.0226,
+              28.5391
+            ],
+            [
+              77.0226,
+              28.5661
+            ],
+            [
+              76.9919,
+              28.5661
+            ],
+            [
+              76.9919,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3006",
+        "grid_x": 6,
+        "grid_y": 5,
+        "predicted_aqi": 200,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.5391
+            ],
+            [
+              77.0533,
+              28.5391
+            ],
+            [
+              77.0533,
+              28.5661
+            ],
+            [
+              77.0226,
+              28.5661
+            ],
+            [
+              77.0226,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3007",
+        "grid_x": 7,
+        "grid_y": 5,
+        "predicted_aqi": 214,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.5391
+            ],
+            [
+              77.084,
+              28.5391
+            ],
+            [
+              77.084,
+              28.5661
+            ],
+            [
+              77.0533,
+              28.5661
+            ],
+            [
+              77.0533,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3008",
+        "grid_x": 8,
+        "grid_y": 5,
+        "predicted_aqi": 228,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.5391
+            ],
+            [
+              77.1147,
+              28.5391
+            ],
+            [
+              77.1147,
+              28.5661
+            ],
+            [
+              77.084,
+              28.5661
+            ],
+            [
+              77.084,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3009",
+        "grid_x": 9,
+        "grid_y": 5,
+        "predicted_aqi": 242,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.5391
+            ],
+            [
+              77.1454,
+              28.5391
+            ],
+            [
+              77.1454,
+              28.5661
+            ],
+            [
+              77.1147,
+              28.5661
+            ],
+            [
+              77.1147,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3010",
+        "grid_x": 10,
+        "grid_y": 5,
+        "predicted_aqi": 254,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.5391
+            ],
+            [
+              77.1761,
+              28.5391
+            ],
+            [
+              77.1761,
+              28.5661
+            ],
+            [
+              77.1454,
+              28.5661
+            ],
+            [
+              77.1454,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3011",
+        "grid_x": 11,
+        "grid_y": 5,
+        "predicted_aqi": 266,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.5391
+            ],
+            [
+              77.2068,
+              28.5391
+            ],
+            [
+              77.2068,
+              28.5661
+            ],
+            [
+              77.1761,
+              28.5661
+            ],
+            [
+              77.1761,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3012",
+        "grid_x": 12,
+        "grid_y": 5,
+        "predicted_aqi": 277,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.5391
+            ],
+            [
+              77.2375,
+              28.5391
+            ],
+            [
+              77.2375,
+              28.5661
+            ],
+            [
+              77.2068,
+              28.5661
+            ],
+            [
+              77.2068,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3013",
+        "grid_x": 13,
+        "grid_y": 5,
+        "predicted_aqi": 286,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.5391
+            ],
+            [
+              77.2682,
+              28.5391
+            ],
+            [
+              77.2682,
+              28.5661
+            ],
+            [
+              77.2375,
+              28.5661
+            ],
+            [
+              77.2375,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3014",
+        "grid_x": 14,
+        "grid_y": 5,
+        "predicted_aqi": 292,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.5391
+            ],
+            [
+              77.2989,
+              28.5391
+            ],
+            [
+              77.2989,
+              28.5661
+            ],
+            [
+              77.2682,
+              28.5661
+            ],
+            [
+              77.2682,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3015",
+        "grid_x": 15,
+        "grid_y": 5,
+        "predicted_aqi": 294,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.5391
+            ],
+            [
+              77.3296,
+              28.5391
+            ],
+            [
+              77.3296,
+              28.5661
+            ],
+            [
+              77.2989,
+              28.5661
+            ],
+            [
+              77.2989,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_105_3016",
+        "grid_x": 16,
+        "grid_y": 5,
+        "predicted_aqi": 292,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.5391
+            ],
+            [
+              77.3603,
+              28.5391
+            ],
+            [
+              77.3603,
+              28.5661
+            ],
+            [
+              77.3296,
+              28.5661
+            ],
+            [
+              77.3296,
+              28.5391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3004",
+        "grid_x": 4,
+        "grid_y": 6,
+        "predicted_aqi": 175,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.5661
+            ],
+            [
+              76.9919,
+              28.5661
+            ],
+            [
+              76.9919,
+              28.5931
+            ],
+            [
+              76.9612,
+              28.5931
+            ],
+            [
+              76.9612,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3005",
+        "grid_x": 5,
+        "grid_y": 6,
+        "predicted_aqi": 190,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.5661
+            ],
+            [
+              77.0226,
+              28.5661
+            ],
+            [
+              77.0226,
+              28.5931
+            ],
+            [
+              76.9919,
+              28.5931
+            ],
+            [
+              76.9919,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3006",
+        "grid_x": 6,
+        "grid_y": 6,
+        "predicted_aqi": 205,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.5661
+            ],
+            [
+              77.0533,
+              28.5661
+            ],
+            [
+              77.0533,
+              28.5931
+            ],
+            [
+              77.0226,
+              28.5931
+            ],
+            [
+              77.0226,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3007",
+        "grid_x": 7,
+        "grid_y": 6,
+        "predicted_aqi": 219,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.5661
+            ],
+            [
+              77.084,
+              28.5661
+            ],
+            [
+              77.084,
+              28.5931
+            ],
+            [
+              77.0533,
+              28.5931
+            ],
+            [
+              77.0533,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3008",
+        "grid_x": 8,
+        "grid_y": 6,
+        "predicted_aqi": 234,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.5661
+            ],
+            [
+              77.1147,
+              28.5661
+            ],
+            [
+              77.1147,
+              28.5931
+            ],
+            [
+              77.084,
+              28.5931
+            ],
+            [
+              77.084,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3009",
+        "grid_x": 9,
+        "grid_y": 6,
+        "predicted_aqi": 248,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.5661
+            ],
+            [
+              77.1454,
+              28.5661
+            ],
+            [
+              77.1454,
+              28.5931
+            ],
+            [
+              77.1147,
+              28.5931
+            ],
+            [
+              77.1147,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3010",
+        "grid_x": 10,
+        "grid_y": 6,
+        "predicted_aqi": 262,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.5661
+            ],
+            [
+              77.1761,
+              28.5661
+            ],
+            [
+              77.1761,
+              28.5931
+            ],
+            [
+              77.1454,
+              28.5931
+            ],
+            [
+              77.1454,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3011",
+        "grid_x": 11,
+        "grid_y": 6,
+        "predicted_aqi": 275,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.5661
+            ],
+            [
+              77.2068,
+              28.5661
+            ],
+            [
+              77.2068,
+              28.5931
+            ],
+            [
+              77.1761,
+              28.5931
+            ],
+            [
+              77.1761,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3012",
+        "grid_x": 12,
+        "grid_y": 6,
+        "predicted_aqi": 287,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.5661
+            ],
+            [
+              77.2375,
+              28.5661
+            ],
+            [
+              77.2375,
+              28.5931
+            ],
+            [
+              77.2068,
+              28.5931
+            ],
+            [
+              77.2068,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3013",
+        "grid_x": 13,
+        "grid_y": 6,
+        "predicted_aqi": 297,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.5661
+            ],
+            [
+              77.2682,
+              28.5661
+            ],
+            [
+              77.2682,
+              28.5931
+            ],
+            [
+              77.2375,
+              28.5931
+            ],
+            [
+              77.2375,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3014",
+        "grid_x": 14,
+        "grid_y": 6,
+        "predicted_aqi": 305,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.5661
+            ],
+            [
+              77.2989,
+              28.5661
+            ],
+            [
+              77.2989,
+              28.5931
+            ],
+            [
+              77.2682,
+              28.5931
+            ],
+            [
+              77.2682,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3015",
+        "grid_x": 15,
+        "grid_y": 6,
+        "predicted_aqi": 308,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.5661
+            ],
+            [
+              77.3296,
+              28.5661
+            ],
+            [
+              77.3296,
+              28.5931
+            ],
+            [
+              77.2989,
+              28.5931
+            ],
+            [
+              77.2989,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_106_3016",
+        "grid_x": 16,
+        "grid_y": 6,
+        "predicted_aqi": 305,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.5661
+            ],
+            [
+              77.3603,
+              28.5661
+            ],
+            [
+              77.3603,
+              28.5931
+            ],
+            [
+              77.3296,
+              28.5931
+            ],
+            [
+              77.3296,
+              28.5661
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3003",
+        "grid_x": 3,
+        "grid_y": 7,
+        "predicted_aqi": 163,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9305,
+              28.5931
+            ],
+            [
+              76.9612,
+              28.5931
+            ],
+            [
+              76.9612,
+              28.6201
+            ],
+            [
+              76.9305,
+              28.6201
+            ],
+            [
+              76.9305,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3004",
+        "grid_x": 4,
+        "grid_y": 7,
+        "predicted_aqi": 178,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.5931
+            ],
+            [
+              76.9919,
+              28.5931
+            ],
+            [
+              76.9919,
+              28.6201
+            ],
+            [
+              76.9612,
+              28.6201
+            ],
+            [
+              76.9612,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3005",
+        "grid_x": 5,
+        "grid_y": 7,
+        "predicted_aqi": 193,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.5931
+            ],
+            [
+              77.0226,
+              28.5931
+            ],
+            [
+              77.0226,
+              28.6201
+            ],
+            [
+              76.9919,
+              28.6201
+            ],
+            [
+              76.9919,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3006",
+        "grid_x": 6,
+        "grid_y": 7,
+        "predicted_aqi": 208,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.5931
+            ],
+            [
+              77.0533,
+              28.5931
+            ],
+            [
+              77.0533,
+              28.6201
+            ],
+            [
+              77.0226,
+              28.6201
+            ],
+            [
+              77.0226,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3007",
+        "grid_x": 7,
+        "grid_y": 7,
+        "predicted_aqi": 223,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.5931
+            ],
+            [
+              77.084,
+              28.5931
+            ],
+            [
+              77.084,
+              28.6201
+            ],
+            [
+              77.0533,
+              28.6201
+            ],
+            [
+              77.0533,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3008",
+        "grid_x": 8,
+        "grid_y": 7,
+        "predicted_aqi": 238,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.5931
+            ],
+            [
+              77.1147,
+              28.5931
+            ],
+            [
+              77.1147,
+              28.6201
+            ],
+            [
+              77.084,
+              28.6201
+            ],
+            [
+              77.084,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3009",
+        "grid_x": 9,
+        "grid_y": 7,
+        "predicted_aqi": 253,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.5931
+            ],
+            [
+              77.1454,
+              28.5931
+            ],
+            [
+              77.1454,
+              28.6201
+            ],
+            [
+              77.1147,
+              28.6201
+            ],
+            [
+              77.1147,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3010",
+        "grid_x": 10,
+        "grid_y": 7,
+        "predicted_aqi": 267,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.5931
+            ],
+            [
+              77.1761,
+              28.5931
+            ],
+            [
+              77.1761,
+              28.6201
+            ],
+            [
+              77.1454,
+              28.6201
+            ],
+            [
+              77.1454,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3011",
+        "grid_x": 11,
+        "grid_y": 7,
+        "predicted_aqi": 281,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.5931
+            ],
+            [
+              77.2068,
+              28.5931
+            ],
+            [
+              77.2068,
+              28.6201
+            ],
+            [
+              77.1761,
+              28.6201
+            ],
+            [
+              77.1761,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3012",
+        "grid_x": 12,
+        "grid_y": 7,
+        "predicted_aqi": 295,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.5931
+            ],
+            [
+              77.2375,
+              28.5931
+            ],
+            [
+              77.2375,
+              28.6201
+            ],
+            [
+              77.2068,
+              28.6201
+            ],
+            [
+              77.2068,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3013",
+        "grid_x": 13,
+        "grid_y": 7,
+        "predicted_aqi": 307,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.5931
+            ],
+            [
+              77.2682,
+              28.5931
+            ],
+            [
+              77.2682,
+              28.6201
+            ],
+            [
+              77.2375,
+              28.6201
+            ],
+            [
+              77.2375,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3014",
+        "grid_x": 14,
+        "grid_y": 7,
+        "predicted_aqi": 317,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.5931
+            ],
+            [
+              77.2989,
+              28.5931
+            ],
+            [
+              77.2989,
+              28.6201
+            ],
+            [
+              77.2682,
+              28.6201
+            ],
+            [
+              77.2682,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3015",
+        "grid_x": 15,
+        "grid_y": 7,
+        "predicted_aqi": 321,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.5931
+            ],
+            [
+              77.3296,
+              28.5931
+            ],
+            [
+              77.3296,
+              28.6201
+            ],
+            [
+              77.2989,
+              28.6201
+            ],
+            [
+              77.2989,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_107_3016",
+        "grid_x": 16,
+        "grid_y": 7,
+        "predicted_aqi": 317,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.5931
+            ],
+            [
+              77.3603,
+              28.5931
+            ],
+            [
+              77.3603,
+              28.6201
+            ],
+            [
+              77.3296,
+              28.6201
+            ],
+            [
+              77.3296,
+              28.5931
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3003",
+        "grid_x": 3,
+        "grid_y": 8,
+        "predicted_aqi": 164,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9305,
+              28.6201
+            ],
+            [
+              76.9612,
+              28.6201
+            ],
+            [
+              76.9612,
+              28.6471
+            ],
+            [
+              76.9305,
+              28.6471
+            ],
+            [
+              76.9305,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3004",
+        "grid_x": 4,
+        "grid_y": 8,
+        "predicted_aqi": 179,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.6201
+            ],
+            [
+              76.9919,
+              28.6201
+            ],
+            [
+              76.9919,
+              28.6471
+            ],
+            [
+              76.9612,
+              28.6471
+            ],
+            [
+              76.9612,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3005",
+        "grid_x": 5,
+        "grid_y": 8,
+        "predicted_aqi": 195,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.6201
+            ],
+            [
+              77.0226,
+              28.6201
+            ],
+            [
+              77.0226,
+              28.6471
+            ],
+            [
+              76.9919,
+              28.6471
+            ],
+            [
+              76.9919,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3006",
+        "grid_x": 6,
+        "grid_y": 8,
+        "predicted_aqi": 210,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.6201
+            ],
+            [
+              77.0533,
+              28.6201
+            ],
+            [
+              77.0533,
+              28.6471
+            ],
+            [
+              77.0226,
+              28.6471
+            ],
+            [
+              77.0226,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3007",
+        "grid_x": 7,
+        "grid_y": 8,
+        "predicted_aqi": 225,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.6201
+            ],
+            [
+              77.084,
+              28.6201
+            ],
+            [
+              77.084,
+              28.6471
+            ],
+            [
+              77.0533,
+              28.6471
+            ],
+            [
+              77.0533,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3008",
+        "grid_x": 8,
+        "grid_y": 8,
+        "predicted_aqi": 240,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.6201
+            ],
+            [
+              77.1147,
+              28.6201
+            ],
+            [
+              77.1147,
+              28.6471
+            ],
+            [
+              77.084,
+              28.6471
+            ],
+            [
+              77.084,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3009",
+        "grid_x": 9,
+        "grid_y": 8,
+        "predicted_aqi": 256,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.6201
+            ],
+            [
+              77.1454,
+              28.6201
+            ],
+            [
+              77.1454,
+              28.6471
+            ],
+            [
+              77.1147,
+              28.6471
+            ],
+            [
+              77.1147,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3010",
+        "grid_x": 10,
+        "grid_y": 8,
+        "predicted_aqi": 271,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.6201
+            ],
+            [
+              77.1761,
+              28.6201
+            ],
+            [
+              77.1761,
+              28.6471
+            ],
+            [
+              77.1454,
+              28.6471
+            ],
+            [
+              77.1454,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3011",
+        "grid_x": 11,
+        "grid_y": 8,
+        "predicted_aqi": 286,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.6201
+            ],
+            [
+              77.2068,
+              28.6201
+            ],
+            [
+              77.2068,
+              28.6471
+            ],
+            [
+              77.1761,
+              28.6471
+            ],
+            [
+              77.1761,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3012",
+        "grid_x": 12,
+        "grid_y": 8,
+        "predicted_aqi": 301,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.6201
+            ],
+            [
+              77.2375,
+              28.6201
+            ],
+            [
+              77.2375,
+              28.6471
+            ],
+            [
+              77.2068,
+              28.6471
+            ],
+            [
+              77.2068,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3013",
+        "grid_x": 13,
+        "grid_y": 8,
+        "predicted_aqi": 315,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.6201
+            ],
+            [
+              77.2682,
+              28.6201
+            ],
+            [
+              77.2682,
+              28.6471
+            ],
+            [
+              77.2375,
+              28.6471
+            ],
+            [
+              77.2375,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3014",
+        "grid_x": 14,
+        "grid_y": 8,
+        "predicted_aqi": 328,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.6201
+            ],
+            [
+              77.2989,
+              28.6201
+            ],
+            [
+              77.2989,
+              28.6471
+            ],
+            [
+              77.2682,
+              28.6471
+            ],
+            [
+              77.2682,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3015",
+        "grid_x": 15,
+        "grid_y": 8,
+        "predicted_aqi": 335,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.6201
+            ],
+            [
+              77.3296,
+              28.6201
+            ],
+            [
+              77.3296,
+              28.6471
+            ],
+            [
+              77.2989,
+              28.6471
+            ],
+            [
+              77.2989,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_108_3016",
+        "grid_x": 16,
+        "grid_y": 8,
+        "predicted_aqi": 328,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.6201
+            ],
+            [
+              77.3603,
+              28.6201
+            ],
+            [
+              77.3603,
+              28.6471
+            ],
+            [
+              77.3296,
+              28.6471
+            ],
+            [
+              77.3296,
+              28.6201
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3004",
+        "grid_x": 4,
+        "grid_y": 9,
+        "predicted_aqi": 180,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.6471
+            ],
+            [
+              76.9919,
+              28.6471
+            ],
+            [
+              76.9919,
+              28.6741
+            ],
+            [
+              76.9612,
+              28.6741
+            ],
+            [
+              76.9612,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3005",
+        "grid_x": 5,
+        "grid_y": 9,
+        "predicted_aqi": 195,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.6471
+            ],
+            [
+              77.0226,
+              28.6471
+            ],
+            [
+              77.0226,
+              28.6741
+            ],
+            [
+              76.9919,
+              28.6741
+            ],
+            [
+              76.9919,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3006",
+        "grid_x": 6,
+        "grid_y": 9,
+        "predicted_aqi": 211,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.6471
+            ],
+            [
+              77.0533,
+              28.6471
+            ],
+            [
+              77.0533,
+              28.6741
+            ],
+            [
+              77.0226,
+              28.6741
+            ],
+            [
+              77.0226,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3007",
+        "grid_x": 7,
+        "grid_y": 9,
+        "predicted_aqi": 226,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.6471
+            ],
+            [
+              77.084,
+              28.6471
+            ],
+            [
+              77.084,
+              28.6741
+            ],
+            [
+              77.0533,
+              28.6741
+            ],
+            [
+              77.0533,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3008",
+        "grid_x": 8,
+        "grid_y": 9,
+        "predicted_aqi": 241,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.6471
+            ],
+            [
+              77.1147,
+              28.6471
+            ],
+            [
+              77.1147,
+              28.6741
+            ],
+            [
+              77.084,
+              28.6741
+            ],
+            [
+              77.084,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3009",
+        "grid_x": 9,
+        "grid_y": 9,
+        "predicted_aqi": 257,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.6471
+            ],
+            [
+              77.1454,
+              28.6471
+            ],
+            [
+              77.1454,
+              28.6741
+            ],
+            [
+              77.1147,
+              28.6741
+            ],
+            [
+              77.1147,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3010",
+        "grid_x": 10,
+        "grid_y": 9,
+        "predicted_aqi": 272,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.6471
+            ],
+            [
+              77.1761,
+              28.6471
+            ],
+            [
+              77.1761,
+              28.6741
+            ],
+            [
+              77.1454,
+              28.6741
+            ],
+            [
+              77.1454,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3011",
+        "grid_x": 11,
+        "grid_y": 9,
+        "predicted_aqi": 288,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.6471
+            ],
+            [
+              77.2068,
+              28.6471
+            ],
+            [
+              77.2068,
+              28.6741
+            ],
+            [
+              77.1761,
+              28.6741
+            ],
+            [
+              77.1761,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3012",
+        "grid_x": 12,
+        "grid_y": 9,
+        "predicted_aqi": 303,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.6471
+            ],
+            [
+              77.2375,
+              28.6471
+            ],
+            [
+              77.2375,
+              28.6741
+            ],
+            [
+              77.2068,
+              28.6741
+            ],
+            [
+              77.2068,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3013",
+        "grid_x": 13,
+        "grid_y": 9,
+        "predicted_aqi": 318,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.6471
+            ],
+            [
+              77.2682,
+              28.6471
+            ],
+            [
+              77.2682,
+              28.6741
+            ],
+            [
+              77.2375,
+              28.6741
+            ],
+            [
+              77.2375,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3014",
+        "grid_x": 14,
+        "grid_y": 9,
+        "predicted_aqi": 334,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.6471
+            ],
+            [
+              77.2989,
+              28.6471
+            ],
+            [
+              77.2989,
+              28.6741
+            ],
+            [
+              77.2682,
+              28.6741
+            ],
+            [
+              77.2682,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3015",
+        "grid_x": 15,
+        "grid_y": 9,
+        "predicted_aqi": 348,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.6471
+            ],
+            [
+              77.3296,
+              28.6471
+            ],
+            [
+              77.3296,
+              28.6741
+            ],
+            [
+              77.2989,
+              28.6741
+            ],
+            [
+              77.2989,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_109_3016",
+        "grid_x": 16,
+        "grid_y": 9,
+        "predicted_aqi": 335,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.6471
+            ],
+            [
+              77.3603,
+              28.6471
+            ],
+            [
+              77.3603,
+              28.6741
+            ],
+            [
+              77.3296,
+              28.6741
+            ],
+            [
+              77.3296,
+              28.6471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3004",
+        "grid_x": 4,
+        "grid_y": 10,
+        "predicted_aqi": 180,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.6741
+            ],
+            [
+              76.9919,
+              28.6741
+            ],
+            [
+              76.9919,
+              28.7011
+            ],
+            [
+              76.9612,
+              28.7011
+            ],
+            [
+              76.9612,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3005",
+        "grid_x": 5,
+        "grid_y": 10,
+        "predicted_aqi": 195,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.6741
+            ],
+            [
+              77.0226,
+              28.6741
+            ],
+            [
+              77.0226,
+              28.7011
+            ],
+            [
+              76.9919,
+              28.7011
+            ],
+            [
+              76.9919,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3006",
+        "grid_x": 6,
+        "grid_y": 10,
+        "predicted_aqi": 210,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.6741
+            ],
+            [
+              77.0533,
+              28.6741
+            ],
+            [
+              77.0533,
+              28.7011
+            ],
+            [
+              77.0226,
+              28.7011
+            ],
+            [
+              77.0226,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3007",
+        "grid_x": 7,
+        "grid_y": 10,
+        "predicted_aqi": 226,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.6741
+            ],
+            [
+              77.084,
+              28.6741
+            ],
+            [
+              77.084,
+              28.7011
+            ],
+            [
+              77.0533,
+              28.7011
+            ],
+            [
+              77.0533,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3008",
+        "grid_x": 8,
+        "grid_y": 10,
+        "predicted_aqi": 241,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.6741
+            ],
+            [
+              77.1147,
+              28.6741
+            ],
+            [
+              77.1147,
+              28.7011
+            ],
+            [
+              77.084,
+              28.7011
+            ],
+            [
+              77.084,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3009",
+        "grid_x": 9,
+        "grid_y": 10,
+        "predicted_aqi": 256,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.6741
+            ],
+            [
+              77.1454,
+              28.6741
+            ],
+            [
+              77.1454,
+              28.7011
+            ],
+            [
+              77.1147,
+              28.7011
+            ],
+            [
+              77.1147,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3010",
+        "grid_x": 10,
+        "grid_y": 10,
+        "predicted_aqi": 271,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.6741
+            ],
+            [
+              77.1761,
+              28.6741
+            ],
+            [
+              77.1761,
+              28.7011
+            ],
+            [
+              77.1454,
+              28.7011
+            ],
+            [
+              77.1454,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3011",
+        "grid_x": 11,
+        "grid_y": 10,
+        "predicted_aqi": 286,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.6741
+            ],
+            [
+              77.2068,
+              28.6741
+            ],
+            [
+              77.2068,
+              28.7011
+            ],
+            [
+              77.1761,
+              28.7011
+            ],
+            [
+              77.1761,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3012",
+        "grid_x": 12,
+        "grid_y": 10,
+        "predicted_aqi": 301,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.6741
+            ],
+            [
+              77.2375,
+              28.6741
+            ],
+            [
+              77.2375,
+              28.7011
+            ],
+            [
+              77.2068,
+              28.7011
+            ],
+            [
+              77.2068,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3013",
+        "grid_x": 13,
+        "grid_y": 10,
+        "predicted_aqi": 316,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.6741
+            ],
+            [
+              77.2682,
+              28.6741
+            ],
+            [
+              77.2682,
+              28.7011
+            ],
+            [
+              77.2375,
+              28.7011
+            ],
+            [
+              77.2375,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3014",
+        "grid_x": 14,
+        "grid_y": 10,
+        "predicted_aqi": 330,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.6741
+            ],
+            [
+              77.2989,
+              28.6741
+            ],
+            [
+              77.2989,
+              28.7011
+            ],
+            [
+              77.2682,
+              28.7011
+            ],
+            [
+              77.2682,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3015",
+        "grid_x": 15,
+        "grid_y": 10,
+        "predicted_aqi": 337,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.6741
+            ],
+            [
+              77.3296,
+              28.6741
+            ],
+            [
+              77.3296,
+              28.7011
+            ],
+            [
+              77.2989,
+              28.7011
+            ],
+            [
+              77.2989,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_110_3016",
+        "grid_x": 16,
+        "grid_y": 10,
+        "predicted_aqi": 330,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.6741
+            ],
+            [
+              77.3603,
+              28.6741
+            ],
+            [
+              77.3603,
+              28.7011
+            ],
+            [
+              77.3296,
+              28.7011
+            ],
+            [
+              77.3296,
+              28.6741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3004",
+        "grid_x": 4,
+        "grid_y": 11,
+        "predicted_aqi": 178,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.7011
+            ],
+            [
+              76.9919,
+              28.7011
+            ],
+            [
+              76.9919,
+              28.7281
+            ],
+            [
+              76.9612,
+              28.7281
+            ],
+            [
+              76.9612,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3005",
+        "grid_x": 5,
+        "grid_y": 11,
+        "predicted_aqi": 193,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.7011
+            ],
+            [
+              77.0226,
+              28.7011
+            ],
+            [
+              77.0226,
+              28.7281
+            ],
+            [
+              76.9919,
+              28.7281
+            ],
+            [
+              76.9919,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3006",
+        "grid_x": 6,
+        "grid_y": 11,
+        "predicted_aqi": 208,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.7011
+            ],
+            [
+              77.0533,
+              28.7011
+            ],
+            [
+              77.0533,
+              28.7281
+            ],
+            [
+              77.0226,
+              28.7281
+            ],
+            [
+              77.0226,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3007",
+        "grid_x": 7,
+        "grid_y": 11,
+        "predicted_aqi": 224,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.7011
+            ],
+            [
+              77.084,
+              28.7011
+            ],
+            [
+              77.084,
+              28.7281
+            ],
+            [
+              77.0533,
+              28.7281
+            ],
+            [
+              77.0533,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3008",
+        "grid_x": 8,
+        "grid_y": 11,
+        "predicted_aqi": 239,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.7011
+            ],
+            [
+              77.1147,
+              28.7011
+            ],
+            [
+              77.1147,
+              28.7281
+            ],
+            [
+              77.084,
+              28.7281
+            ],
+            [
+              77.084,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3009",
+        "grid_x": 9,
+        "grid_y": 11,
+        "predicted_aqi": 253,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.7011
+            ],
+            [
+              77.1454,
+              28.7011
+            ],
+            [
+              77.1454,
+              28.7281
+            ],
+            [
+              77.1147,
+              28.7281
+            ],
+            [
+              77.1147,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3010",
+        "grid_x": 10,
+        "grid_y": 11,
+        "predicted_aqi": 268,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.7011
+            ],
+            [
+              77.1761,
+              28.7011
+            ],
+            [
+              77.1761,
+              28.7281
+            ],
+            [
+              77.1454,
+              28.7281
+            ],
+            [
+              77.1454,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3011",
+        "grid_x": 11,
+        "grid_y": 11,
+        "predicted_aqi": 282,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.7011
+            ],
+            [
+              77.2068,
+              28.7011
+            ],
+            [
+              77.2068,
+              28.7281
+            ],
+            [
+              77.1761,
+              28.7281
+            ],
+            [
+              77.1761,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3012",
+        "grid_x": 12,
+        "grid_y": 11,
+        "predicted_aqi": 296,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.7011
+            ],
+            [
+              77.2375,
+              28.7011
+            ],
+            [
+              77.2375,
+              28.7281
+            ],
+            [
+              77.2068,
+              28.7281
+            ],
+            [
+              77.2068,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3013",
+        "grid_x": 13,
+        "grid_y": 11,
+        "predicted_aqi": 309,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.7011
+            ],
+            [
+              77.2682,
+              28.7011
+            ],
+            [
+              77.2682,
+              28.7281
+            ],
+            [
+              77.2375,
+              28.7281
+            ],
+            [
+              77.2375,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3014",
+        "grid_x": 14,
+        "grid_y": 11,
+        "predicted_aqi": 319,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.7011
+            ],
+            [
+              77.2989,
+              28.7011
+            ],
+            [
+              77.2989,
+              28.7281
+            ],
+            [
+              77.2682,
+              28.7281
+            ],
+            [
+              77.2682,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3015",
+        "grid_x": 15,
+        "grid_y": 11,
+        "predicted_aqi": 324,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.7011
+            ],
+            [
+              77.3296,
+              28.7011
+            ],
+            [
+              77.3296,
+              28.7281
+            ],
+            [
+              77.2989,
+              28.7281
+            ],
+            [
+              77.2989,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_111_3016",
+        "grid_x": 16,
+        "grid_y": 11,
+        "predicted_aqi": 320,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.7011
+            ],
+            [
+              77.3603,
+              28.7011
+            ],
+            [
+              77.3603,
+              28.7281
+            ],
+            [
+              77.3296,
+              28.7281
+            ],
+            [
+              77.3296,
+              28.7011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3004",
+        "grid_x": 4,
+        "grid_y": 12,
+        "predicted_aqi": 176,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9612,
+              28.7281
+            ],
+            [
+              76.9919,
+              28.7281
+            ],
+            [
+              76.9919,
+              28.7551
+            ],
+            [
+              76.9612,
+              28.7551
+            ],
+            [
+              76.9612,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3005",
+        "grid_x": 5,
+        "grid_y": 12,
+        "predicted_aqi": 191,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.7281
+            ],
+            [
+              77.0226,
+              28.7281
+            ],
+            [
+              77.0226,
+              28.7551
+            ],
+            [
+              76.9919,
+              28.7551
+            ],
+            [
+              76.9919,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3006",
+        "grid_x": 6,
+        "grid_y": 12,
+        "predicted_aqi": 205,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.7281
+            ],
+            [
+              77.0533,
+              28.7281
+            ],
+            [
+              77.0533,
+              28.7551
+            ],
+            [
+              77.0226,
+              28.7551
+            ],
+            [
+              77.0226,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3007",
+        "grid_x": 7,
+        "grid_y": 12,
+        "predicted_aqi": 220,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.7281
+            ],
+            [
+              77.084,
+              28.7281
+            ],
+            [
+              77.084,
+              28.7551
+            ],
+            [
+              77.0533,
+              28.7551
+            ],
+            [
+              77.0533,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3008",
+        "grid_x": 8,
+        "grid_y": 12,
+        "predicted_aqi": 235,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.7281
+            ],
+            [
+              77.1147,
+              28.7281
+            ],
+            [
+              77.1147,
+              28.7551
+            ],
+            [
+              77.084,
+              28.7551
+            ],
+            [
+              77.084,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3009",
+        "grid_x": 9,
+        "grid_y": 12,
+        "predicted_aqi": 249,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.7281
+            ],
+            [
+              77.1454,
+              28.7281
+            ],
+            [
+              77.1454,
+              28.7551
+            ],
+            [
+              77.1147,
+              28.7551
+            ],
+            [
+              77.1147,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3010",
+        "grid_x": 10,
+        "grid_y": 12,
+        "predicted_aqi": 263,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.7281
+            ],
+            [
+              77.1761,
+              28.7281
+            ],
+            [
+              77.1761,
+              28.7551
+            ],
+            [
+              77.1454,
+              28.7551
+            ],
+            [
+              77.1454,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3011",
+        "grid_x": 11,
+        "grid_y": 12,
+        "predicted_aqi": 276,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.7281
+            ],
+            [
+              77.2068,
+              28.7281
+            ],
+            [
+              77.2068,
+              28.7551
+            ],
+            [
+              77.1761,
+              28.7551
+            ],
+            [
+              77.1761,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3012",
+        "grid_x": 12,
+        "grid_y": 12,
+        "predicted_aqi": 289,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.7281
+            ],
+            [
+              77.2375,
+              28.7281
+            ],
+            [
+              77.2375,
+              28.7551
+            ],
+            [
+              77.2068,
+              28.7551
+            ],
+            [
+              77.2068,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3013",
+        "grid_x": 13,
+        "grid_y": 12,
+        "predicted_aqi": 299,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.7281
+            ],
+            [
+              77.2682,
+              28.7281
+            ],
+            [
+              77.2682,
+              28.7551
+            ],
+            [
+              77.2375,
+              28.7551
+            ],
+            [
+              77.2375,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3014",
+        "grid_x": 14,
+        "grid_y": 12,
+        "predicted_aqi": 307,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.7281
+            ],
+            [
+              77.2989,
+              28.7281
+            ],
+            [
+              77.2989,
+              28.7551
+            ],
+            [
+              77.2682,
+              28.7551
+            ],
+            [
+              77.2682,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3015",
+        "grid_x": 15,
+        "grid_y": 12,
+        "predicted_aqi": 310,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.7281
+            ],
+            [
+              77.3296,
+              28.7281
+            ],
+            [
+              77.3296,
+              28.7551
+            ],
+            [
+              77.2989,
+              28.7551
+            ],
+            [
+              77.2989,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_112_3016",
+        "grid_x": 16,
+        "grid_y": 12,
+        "predicted_aqi": 308,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.7281
+            ],
+            [
+              77.3603,
+              28.7281
+            ],
+            [
+              77.3603,
+              28.7551
+            ],
+            [
+              77.3296,
+              28.7551
+            ],
+            [
+              77.3296,
+              28.7281
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3005",
+        "grid_x": 5,
+        "grid_y": 13,
+        "predicted_aqi": 187,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.7551
+            ],
+            [
+              77.0226,
+              28.7551
+            ],
+            [
+              77.0226,
+              28.7821
+            ],
+            [
+              76.9919,
+              28.7821
+            ],
+            [
+              76.9919,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3006",
+        "grid_x": 6,
+        "grid_y": 13,
+        "predicted_aqi": 201,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.7551
+            ],
+            [
+              77.0533,
+              28.7551
+            ],
+            [
+              77.0533,
+              28.7821
+            ],
+            [
+              77.0226,
+              28.7821
+            ],
+            [
+              77.0226,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3007",
+        "grid_x": 7,
+        "grid_y": 13,
+        "predicted_aqi": 215,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.7551
+            ],
+            [
+              77.084,
+              28.7551
+            ],
+            [
+              77.084,
+              28.7821
+            ],
+            [
+              77.0533,
+              28.7821
+            ],
+            [
+              77.0533,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3008",
+        "grid_x": 8,
+        "grid_y": 13,
+        "predicted_aqi": 229,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.7551
+            ],
+            [
+              77.1147,
+              28.7551
+            ],
+            [
+              77.1147,
+              28.7821
+            ],
+            [
+              77.084,
+              28.7821
+            ],
+            [
+              77.084,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3009",
+        "grid_x": 9,
+        "grid_y": 13,
+        "predicted_aqi": 243,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.7551
+            ],
+            [
+              77.1454,
+              28.7551
+            ],
+            [
+              77.1454,
+              28.7821
+            ],
+            [
+              77.1147,
+              28.7821
+            ],
+            [
+              77.1147,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3010",
+        "grid_x": 10,
+        "grid_y": 13,
+        "predicted_aqi": 256,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.7551
+            ],
+            [
+              77.1761,
+              28.7551
+            ],
+            [
+              77.1761,
+              28.7821
+            ],
+            [
+              77.1454,
+              28.7821
+            ],
+            [
+              77.1454,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3011",
+        "grid_x": 11,
+        "grid_y": 13,
+        "predicted_aqi": 268,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.7551
+            ],
+            [
+              77.2068,
+              28.7551
+            ],
+            [
+              77.2068,
+              28.7821
+            ],
+            [
+              77.1761,
+              28.7821
+            ],
+            [
+              77.1761,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3012",
+        "grid_x": 12,
+        "grid_y": 13,
+        "predicted_aqi": 279,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.7551
+            ],
+            [
+              77.2375,
+              28.7551
+            ],
+            [
+              77.2375,
+              28.7821
+            ],
+            [
+              77.2068,
+              28.7821
+            ],
+            [
+              77.2068,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3013",
+        "grid_x": 13,
+        "grid_y": 13,
+        "predicted_aqi": 288,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.7551
+            ],
+            [
+              77.2682,
+              28.7551
+            ],
+            [
+              77.2682,
+              28.7821
+            ],
+            [
+              77.2375,
+              28.7821
+            ],
+            [
+              77.2375,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3014",
+        "grid_x": 14,
+        "grid_y": 13,
+        "predicted_aqi": 295,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.7551
+            ],
+            [
+              77.2989,
+              28.7551
+            ],
+            [
+              77.2989,
+              28.7821
+            ],
+            [
+              77.2682,
+              28.7821
+            ],
+            [
+              77.2682,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3015",
+        "grid_x": 15,
+        "grid_y": 13,
+        "predicted_aqi": 297,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.7551
+            ],
+            [
+              77.3296,
+              28.7551
+            ],
+            [
+              77.3296,
+              28.7821
+            ],
+            [
+              77.2989,
+              28.7821
+            ],
+            [
+              77.2989,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_113_3016",
+        "grid_x": 16,
+        "grid_y": 13,
+        "predicted_aqi": 295,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.7551
+            ],
+            [
+              77.3603,
+              28.7551
+            ],
+            [
+              77.3603,
+              28.7821
+            ],
+            [
+              77.3296,
+              28.7821
+            ],
+            [
+              77.3296,
+              28.7551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3005",
+        "grid_x": 5,
+        "grid_y": 14,
+        "predicted_aqi": 182,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.9919,
+              28.7821
+            ],
+            [
+              77.0226,
+              28.7821
+            ],
+            [
+              77.0226,
+              28.8091
+            ],
+            [
+              76.9919,
+              28.8091
+            ],
+            [
+              76.9919,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3006",
+        "grid_x": 6,
+        "grid_y": 14,
+        "predicted_aqi": 196,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.7821
+            ],
+            [
+              77.0533,
+              28.7821
+            ],
+            [
+              77.0533,
+              28.8091
+            ],
+            [
+              77.0226,
+              28.8091
+            ],
+            [
+              77.0226,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3007",
+        "grid_x": 7,
+        "grid_y": 14,
+        "predicted_aqi": 210,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.7821
+            ],
+            [
+              77.084,
+              28.7821
+            ],
+            [
+              77.084,
+              28.8091
+            ],
+            [
+              77.0533,
+              28.8091
+            ],
+            [
+              77.0533,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3008",
+        "grid_x": 8,
+        "grid_y": 14,
+        "predicted_aqi": 223,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.7821
+            ],
+            [
+              77.1147,
+              28.7821
+            ],
+            [
+              77.1147,
+              28.8091
+            ],
+            [
+              77.084,
+              28.8091
+            ],
+            [
+              77.084,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3009",
+        "grid_x": 9,
+        "grid_y": 14,
+        "predicted_aqi": 236,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.7821
+            ],
+            [
+              77.1454,
+              28.7821
+            ],
+            [
+              77.1454,
+              28.8091
+            ],
+            [
+              77.1147,
+              28.8091
+            ],
+            [
+              77.1147,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3010",
+        "grid_x": 10,
+        "grid_y": 14,
+        "predicted_aqi": 248,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.7821
+            ],
+            [
+              77.1761,
+              28.7821
+            ],
+            [
+              77.1761,
+              28.8091
+            ],
+            [
+              77.1454,
+              28.8091
+            ],
+            [
+              77.1454,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3011",
+        "grid_x": 11,
+        "grid_y": 14,
+        "predicted_aqi": 259,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.7821
+            ],
+            [
+              77.2068,
+              28.7821
+            ],
+            [
+              77.2068,
+              28.8091
+            ],
+            [
+              77.1761,
+              28.8091
+            ],
+            [
+              77.1761,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3012",
+        "grid_x": 12,
+        "grid_y": 14,
+        "predicted_aqi": 269,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.7821
+            ],
+            [
+              77.2375,
+              28.7821
+            ],
+            [
+              77.2375,
+              28.8091
+            ],
+            [
+              77.2068,
+              28.8091
+            ],
+            [
+              77.2068,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3013",
+        "grid_x": 13,
+        "grid_y": 14,
+        "predicted_aqi": 276,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.7821
+            ],
+            [
+              77.2682,
+              28.7821
+            ],
+            [
+              77.2682,
+              28.8091
+            ],
+            [
+              77.2375,
+              28.8091
+            ],
+            [
+              77.2375,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3014",
+        "grid_x": 14,
+        "grid_y": 14,
+        "predicted_aqi": 282,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.7821
+            ],
+            [
+              77.2989,
+              28.7821
+            ],
+            [
+              77.2989,
+              28.8091
+            ],
+            [
+              77.2682,
+              28.8091
+            ],
+            [
+              77.2682,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3015",
+        "grid_x": 15,
+        "grid_y": 14,
+        "predicted_aqi": 283,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.7821
+            ],
+            [
+              77.3296,
+              28.7821
+            ],
+            [
+              77.3296,
+              28.8091
+            ],
+            [
+              77.2989,
+              28.8091
+            ],
+            [
+              77.2989,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_114_3016",
+        "grid_x": 16,
+        "grid_y": 14,
+        "predicted_aqi": 282,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.7821
+            ],
+            [
+              77.3603,
+              28.7821
+            ],
+            [
+              77.3603,
+              28.8091
+            ],
+            [
+              77.3296,
+              28.8091
+            ],
+            [
+              77.3296,
+              28.7821
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3006",
+        "grid_x": 6,
+        "grid_y": 15,
+        "predicted_aqi": 190,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0226,
+              28.8091
+            ],
+            [
+              77.0533,
+              28.8091
+            ],
+            [
+              77.0533,
+              28.8361
+            ],
+            [
+              77.0226,
+              28.8361
+            ],
+            [
+              77.0226,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3007",
+        "grid_x": 7,
+        "grid_y": 15,
+        "predicted_aqi": 203,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.8091
+            ],
+            [
+              77.084,
+              28.8091
+            ],
+            [
+              77.084,
+              28.8361
+            ],
+            [
+              77.0533,
+              28.8361
+            ],
+            [
+              77.0533,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3008",
+        "grid_x": 8,
+        "grid_y": 15,
+        "predicted_aqi": 215,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.8091
+            ],
+            [
+              77.1147,
+              28.8091
+            ],
+            [
+              77.1147,
+              28.8361
+            ],
+            [
+              77.084,
+              28.8361
+            ],
+            [
+              77.084,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3009",
+        "grid_x": 9,
+        "grid_y": 15,
+        "predicted_aqi": 227,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.8091
+            ],
+            [
+              77.1454,
+              28.8091
+            ],
+            [
+              77.1454,
+              28.8361
+            ],
+            [
+              77.1147,
+              28.8361
+            ],
+            [
+              77.1147,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3010",
+        "grid_x": 10,
+        "grid_y": 15,
+        "predicted_aqi": 239,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.8091
+            ],
+            [
+              77.1761,
+              28.8091
+            ],
+            [
+              77.1761,
+              28.8361
+            ],
+            [
+              77.1454,
+              28.8361
+            ],
+            [
+              77.1454,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3011",
+        "grid_x": 11,
+        "grid_y": 15,
+        "predicted_aqi": 249,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.8091
+            ],
+            [
+              77.2068,
+              28.8091
+            ],
+            [
+              77.2068,
+              28.8361
+            ],
+            [
+              77.1761,
+              28.8361
+            ],
+            [
+              77.1761,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3012",
+        "grid_x": 12,
+        "grid_y": 15,
+        "predicted_aqi": 257,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.8091
+            ],
+            [
+              77.2375,
+              28.8091
+            ],
+            [
+              77.2375,
+              28.8361
+            ],
+            [
+              77.2068,
+              28.8361
+            ],
+            [
+              77.2068,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3013",
+        "grid_x": 13,
+        "grid_y": 15,
+        "predicted_aqi": 264,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.8091
+            ],
+            [
+              77.2682,
+              28.8091
+            ],
+            [
+              77.2682,
+              28.8361
+            ],
+            [
+              77.2375,
+              28.8361
+            ],
+            [
+              77.2375,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3014",
+        "grid_x": 14,
+        "grid_y": 15,
+        "predicted_aqi": 268,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.8091
+            ],
+            [
+              77.2989,
+              28.8091
+            ],
+            [
+              77.2989,
+              28.8361
+            ],
+            [
+              77.2682,
+              28.8361
+            ],
+            [
+              77.2682,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3015",
+        "grid_x": 15,
+        "grid_y": 15,
+        "predicted_aqi": 270,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.8091
+            ],
+            [
+              77.3296,
+              28.8091
+            ],
+            [
+              77.3296,
+              28.8361
+            ],
+            [
+              77.2989,
+              28.8361
+            ],
+            [
+              77.2989,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_115_3016",
+        "grid_x": 16,
+        "grid_y": 15,
+        "predicted_aqi": 269,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.8091
+            ],
+            [
+              77.3603,
+              28.8091
+            ],
+            [
+              77.3603,
+              28.8361
+            ],
+            [
+              77.3296,
+              28.8361
+            ],
+            [
+              77.3296,
+              28.8091
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3007",
+        "grid_x": 7,
+        "grid_y": 16,
+        "predicted_aqi": 195,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.0533,
+              28.8361
+            ],
+            [
+              77.084,
+              28.8361
+            ],
+            [
+              77.084,
+              28.8631
+            ],
+            [
+              77.0533,
+              28.8631
+            ],
+            [
+              77.0533,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3008",
+        "grid_x": 8,
+        "grid_y": 16,
+        "predicted_aqi": 207,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.8361
+            ],
+            [
+              77.1147,
+              28.8361
+            ],
+            [
+              77.1147,
+              28.8631
+            ],
+            [
+              77.084,
+              28.8631
+            ],
+            [
+              77.084,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3009",
+        "grid_x": 9,
+        "grid_y": 16,
+        "predicted_aqi": 218,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.8361
+            ],
+            [
+              77.1454,
+              28.8361
+            ],
+            [
+              77.1454,
+              28.8631
+            ],
+            [
+              77.1147,
+              28.8631
+            ],
+            [
+              77.1147,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3010",
+        "grid_x": 10,
+        "grid_y": 16,
+        "predicted_aqi": 229,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.8361
+            ],
+            [
+              77.1761,
+              28.8361
+            ],
+            [
+              77.1761,
+              28.8631
+            ],
+            [
+              77.1454,
+              28.8631
+            ],
+            [
+              77.1454,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3011",
+        "grid_x": 11,
+        "grid_y": 16,
+        "predicted_aqi": 238,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.8361
+            ],
+            [
+              77.2068,
+              28.8361
+            ],
+            [
+              77.2068,
+              28.8631
+            ],
+            [
+              77.1761,
+              28.8631
+            ],
+            [
+              77.1761,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3012",
+        "grid_x": 12,
+        "grid_y": 16,
+        "predicted_aqi": 245,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.8361
+            ],
+            [
+              77.2375,
+              28.8361
+            ],
+            [
+              77.2375,
+              28.8631
+            ],
+            [
+              77.2068,
+              28.8631
+            ],
+            [
+              77.2068,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3013",
+        "grid_x": 13,
+        "grid_y": 16,
+        "predicted_aqi": 251,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.8361
+            ],
+            [
+              77.2682,
+              28.8361
+            ],
+            [
+              77.2682,
+              28.8631
+            ],
+            [
+              77.2375,
+              28.8631
+            ],
+            [
+              77.2375,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3014",
+        "grid_x": 14,
+        "grid_y": 16,
+        "predicted_aqi": 255,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.8361
+            ],
+            [
+              77.2989,
+              28.8361
+            ],
+            [
+              77.2989,
+              28.8631
+            ],
+            [
+              77.2682,
+              28.8631
+            ],
+            [
+              77.2682,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3015",
+        "grid_x": 15,
+        "grid_y": 16,
+        "predicted_aqi": 256,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.8361
+            ],
+            [
+              77.3296,
+              28.8361
+            ],
+            [
+              77.3296,
+              28.8631
+            ],
+            [
+              77.2989,
+              28.8631
+            ],
+            [
+              77.2989,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_116_3016",
+        "grid_x": 16,
+        "grid_y": 16,
+        "predicted_aqi": 255,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.8361
+            ],
+            [
+              77.3603,
+              28.8361
+            ],
+            [
+              77.3603,
+              28.8631
+            ],
+            [
+              77.3296,
+              28.8631
+            ],
+            [
+              77.3296,
+              28.8361
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3008",
+        "grid_x": 8,
+        "grid_y": 17,
+        "predicted_aqi": 198,
+        "land_use": "Residential / Mixed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.084,
+              28.8631
+            ],
+            [
+              77.1147,
+              28.8631
+            ],
+            [
+              77.1147,
+              28.8901
+            ],
+            [
+              77.084,
+              28.8901
+            ],
+            [
+              77.084,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3009",
+        "grid_x": 9,
+        "grid_y": 17,
+        "predicted_aqi": 208,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1147,
+              28.8631
+            ],
+            [
+              77.1454,
+              28.8631
+            ],
+            [
+              77.1454,
+              28.8901
+            ],
+            [
+              77.1147,
+              28.8901
+            ],
+            [
+              77.1147,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3010",
+        "grid_x": 10,
+        "grid_y": 17,
+        "predicted_aqi": 218,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1454,
+              28.8631
+            ],
+            [
+              77.1761,
+              28.8631
+            ],
+            [
+              77.1761,
+              28.8901
+            ],
+            [
+              77.1454,
+              28.8901
+            ],
+            [
+              77.1454,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3011",
+        "grid_x": 11,
+        "grid_y": 17,
+        "predicted_aqi": 226,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.1761,
+              28.8631
+            ],
+            [
+              77.2068,
+              28.8631
+            ],
+            [
+              77.2068,
+              28.8901
+            ],
+            [
+              77.1761,
+              28.8901
+            ],
+            [
+              77.1761,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3012",
+        "grid_x": 12,
+        "grid_y": 17,
+        "predicted_aqi": 233,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2068,
+              28.8631
+            ],
+            [
+              77.2375,
+              28.8631
+            ],
+            [
+              77.2375,
+              28.8901
+            ],
+            [
+              77.2068,
+              28.8901
+            ],
+            [
+              77.2068,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3013",
+        "grid_x": 13,
+        "grid_y": 17,
+        "predicted_aqi": 238,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2375,
+              28.8631
+            ],
+            [
+              77.2682,
+              28.8631
+            ],
+            [
+              77.2682,
+              28.8901
+            ],
+            [
+              77.2375,
+              28.8901
+            ],
+            [
+              77.2375,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3014",
+        "grid_x": 14,
+        "grid_y": 17,
+        "predicted_aqi": 242,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2682,
+              28.8631
+            ],
+            [
+              77.2989,
+              28.8631
+            ],
+            [
+              77.2989,
+              28.8901
+            ],
+            [
+              77.2682,
+              28.8901
+            ],
+            [
+              77.2682,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3015",
+        "grid_x": 15,
+        "grid_y": 17,
+        "predicted_aqi": 243,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.2989,
+              28.8631
+            ],
+            [
+              77.3296,
+              28.8631
+            ],
+            [
+              77.3296,
+              28.8901
+            ],
+            [
+              77.2989,
+              28.8901
+            ],
+            [
+              77.2989,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "grid_id": "grid_117_3016",
+        "grid_x": 16,
+        "grid_y": 17,
+        "predicted_aqi": 242,
+        "land_use": "Commercial / Industrial"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.3296,
+              28.8631
+            ],
+            [
+              77.3603,
+              28.8631
+            ],
+            [
+              77.3603,
+              28.8901
+            ],
+            [
+              77.3296,
+              28.8901
+            ],
+            [
+              77.3296,
+              28.8631
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

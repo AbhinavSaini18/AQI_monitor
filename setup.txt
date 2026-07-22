@@ -1,0 +1,69 @@
+# Delhi AQI Monitor - Setup Instructions
+
+Follow these step-by-step instructions to run the project on a new device.
+
+## Prerequisites
+- Python 3.10+
+- Node.js 18+ and npm
+- PostgreSQL (or Docker to run via docker-compose)
+- Git
+
+## 1. Clone the Repository
+git clone https://github.com/AbhinavSaini18/AQI_monitor.git
+cd AQI_monitor
+
+## 2. Environment Variables
+Copy `.env.example` to `.env` (or create a `.env` file in the root directory) and fill it with your credentials:
+
+```
+DB_USER=admin
+DB_PASSWORD=1234
+DB_NAME=Aqi_monitor
+DB_HOST=localhost
+DB_PORT=5432
+PGADMIN_EMAIL=admin@aqi.com
+PGADMIN_PASSWORD=1234
+AQICN_TOKEN=<your_waqi_token>
+```
+
+## 3. Database Setup
+You can either run the database using Docker or a local PostgreSQL installation.
+
+**Option A (Docker):**
+```bash
+docker-compose up -d
+```
+This will start a PostgreSQL container with the credentials from your `.env` file.
+
+**Option B (Local Postgres):**
+Create a database named `Aqi_monitor` and a user `admin` with password `1234`.
+
+**Populate the Database:**
+To quickly bootstrap the app with existing Delhi grid data and AI predictions, restore the provided SQL dump:
+```bash
+# If using Docker:
+cat aqi_monitor_bootstrap.sql | docker exec -i aqi_db psql -U admin -d Aqi_monitor
+
+# If using local Postgres:
+psql -U admin -h localhost -d Aqi_monitor -f aqi_monitor_bootstrap.sql
+```
+
+## 4. Start the Backend
+Open a new terminal and run:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+pip install -r requirements.txt
+cd backend
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+The backend API will be available at http://localhost:8000.
+
+## 5. Start the Frontend
+Open another terminal and run:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The frontend dashboard will be available at http://localhost:5173.

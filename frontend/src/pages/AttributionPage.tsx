@@ -1,29 +1,31 @@
+import { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
-import { sourceAttributions } from '../data/mockData';
-import { Flame, Car, Cloud, Building2 } from 'lucide-react';
+import { sourceAttributions as mockSourceAttributions } from '../data/mockData';
+import { Flame, Car, Cloud, Building2, Search, Loader2 } from 'lucide-react';
+import { fetchAttribution } from '../utils/api';
 
-const sourceDetails = [
+const defaultSourceDetails = [
   {
     icon: Flame,
     name: 'Crop Burning Smoke',
     pct: 35,
-    color: '#22c55e',
-    detail: 'Satellite imagery detected 142 active fire counts in neighboring agricultural regions. NW winds are transporting smoke into the city.',
+    color: '#34d399',
+    detail: 'Satellite imagery detected active fire counts in neighboring agricultural regions. NW winds transporting smoke into the grid.',
     action: 'Coordinate with state agricultural department for stubble management incentives.',
   },
   {
     icon: Car,
     name: 'Vehicular Traffic',
     pct: 30,
-    color: '#06b6d4',
-    detail: 'NOx and PM emissions from diesel vehicles concentrated along major arterials during peak hours.',
-    action: 'Implement odd-even scheme and promote public transit on high-AQI days.',
+    color: '#60a5fa',
+    detail: 'NOx and PM emissions from diesel vehicles concentrated along major arterials in cell sector.',
+    action: 'Implement traffic rationing and promote public transit on high-AQI days.',
   },
   {
     icon: Cloud,
     name: 'Inversion / Weather',
     pct: 25,
-    color: '#3b82f6',
+    color: '#94a3b8',
     detail: 'Low-level temperature inversion is trapping pollutants near the surface, preventing dispersion.',
     action: 'Issue pollution alerts and activate emergency response protocols.',
   },
@@ -31,13 +33,13 @@ const sourceDetails = [
     icon: Building2,
     name: 'Construction Dust',
     pct: 10,
-    color: '#6b7280',
+    color: '#cbd5e1',
     detail: 'Uncovered construction sites and road dust contribute to coarse particulate matter (PM10).',
     action: 'Enforce dust suppression measures at active construction sites.',
   },
 ];
 
-const hourlyBySource = [
+const defaultHourlyBySource = [
   { time: '6 AM', crop: 30, traffic: 20, weather: 15, dust: 5 },
   { time: '9 AM', crop: 35, traffic: 35, weather: 20, dust: 8 },
   { time: '12 PM', crop: 40, traffic: 30, weather: 25, dust: 10 },
@@ -46,43 +48,171 @@ const hourlyBySource = [
   { time: '9 PM', crop: 35, traffic: 25, weather: 22, dust: 6 },
 ];
 
-export default function AttributionPage() {
+interface AttributionPageProps {
+  gridId?: string | null;
+  onSelectGrid?: (gridId: string) => void;
+}
+
+export default function AttributionPage({ gridId, onSelectGrid }: AttributionPageProps) {
+  const currentGridId = gridId || 'grid_105_3008';
+  const [inputGridId, setInputGridId] = useState(currentGridId);
+  const [sourceData, setSourceData] = useState<Array<{ name: string; percentage: number; color: string }>>(mockSourceAttributions);
+  const [sourceDetails, setSourceDetails] = useState(defaultSourceDetails);
+  const [loading, setLoading] = useState(true);
+  const [isLiveData, setIsLiveData] = useState(false);
+
+  useEffect(() => {
+    setInputGridId(currentGridId);
+    let isMounted = true;
+    setLoading(true);
+
+    fetchAttribution(currentGridId)
+      .then((res) => {
+        if (!isMounted) return;
+
+        if (res && res.attribution) {
+          let parsedData: Array<{ name: string; percentage: number; color: string }> = [];
+
+          if (typeof res.attribution === 'object' && res.attribution !== null) {
+            const colors = ['#34d399', '#60a5fa', '#94a3b8', '#cbd5e1', '#f59e0b'];
+            let idx = 0;
+            const newDetails = [];
+            for (const [key, val] of Object.entries(res.attribution)) {
+              const formattedName = key.replace(/_/g, ' ').toUpperCase();
+              const pct = typeof val === 'number' ? Math.max(0, val) : 0;
+              parsedData.push({
+                name: formattedName,
+                percentage: pct,
+                color: colors[idx % colors.length],
+              });
+              
+              let icon = Cloud;
+              if (key === 'crop_burning') icon = Flame;
+              else if (key === 'traffic') icon = Car;
+              else if (key === 'construction') icon = Building2;
+              else if (key === 'industrial') icon = Building2;
+              
+              newDetails.push({
+                icon,
+                name: formattedName,
+                pct,
+                color: colors[idx % colors.length],
+                detail: `Satellite and sensor data indicates this source contributes ${pct}% of the pollutant load in this grid sector.`,
+                action: 'Automated response protocol and targeted mitigation recommended.'
+              });
+              idx++;
+            }
+            setSourceDetails(newDetails);
+          }
+
+          if (parsedData.length > 0) {
+            setSourceData(parsedData);
+            setIsLiveData(true);
+          } else {
+            setSourceData(mockSourceAttributions);
+            setSourceDetails(defaultSourceDetails);
+            setIsLiveData(false);
+          }
+        } else {
+          setSourceData(mockSourceAttributions);
+          setSourceDetails(defaultSourceDetails);
+          setIsLiveData(false);
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        if (isMounted) {
+          setSourceData(mockSourceAttributions);
+          setSourceDetails(defaultSourceDetails);
+          setIsLiveData(false);
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [currentGridId]);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (inputGridId.trim() && onSelectGrid) {
+      onSelectGrid(inputGridId.trim());
+    }
+  };
+
   return (
-    <div className="space-y-5">
+    <div className="space-y-4 font-sans text-neutral-900">
+      {/* Target Grid Header */}
+      <div className="bg-white rounded-none border border-neutral-300 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+        <div>
+          <div className="flex items-center gap-2">
+            <h3 className="text-neutral-900 font-extrabold text-xs uppercase tracking-wider">Source Sector:</h3>
+            <span className="px-2 py-0.5 rounded-none bg-neutral-800 text-white font-mono font-bold text-xs uppercase">
+              {currentGridId}
+            </span>
+            <span className={`px-2 py-0.5 rounded-none text-[10px] font-bold uppercase ${isLiveData ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'bg-neutral-200 text-neutral-800 border border-neutral-300'}`}>
+              {isLiveData ? 'Live Attribution Data' : 'Demo Attribution Data'}
+            </span>
+          </div>
+          <p className="text-neutral-600 text-xs mt-1 font-medium">
+            Analyzing source contribution vectors for targeted 1km spatial polygon.
+          </p>
+        </div>
+
+        <form onSubmit={handleSearchSubmit} className="flex items-center gap-2 w-full sm:w-auto">
+          <input
+            type="text"
+            value={inputGridId}
+            onChange={(e) => setInputGridId(e.target.value)}
+            placeholder="e.g. grid_105_3008"
+            className="px-3 py-1.5 rounded-none bg-neutral-100 border border-neutral-300 text-xs text-neutral-900 font-medium placeholder:text-neutral-500 focus:outline-none focus:bg-white"
+          />
+          <button
+            type="submit"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-neutral-800 hover:bg-neutral-900 text-white font-bold text-xs uppercase tracking-wider transition"
+          >
+            <Search className="w-3.5 h-3.5" /> Load
+          </button>
+        </form>
+      </div>
+
       {/* Donut + breakdown */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <h3 className="text-white font-semibold text-sm mb-4">Source Breakdown</h3>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-neutral-900 font-extrabold text-xs uppercase tracking-wider">Source Breakdown</h3>
+            {loading && <Loader2 className="w-4 h-4 text-neutral-600 animate-spin" />}
+          </div>
           <ResponsiveContainer width="100%" height={200}>
             <PieChart>
-              <Pie data={sourceAttributions} dataKey="percentage" nameKey="name" cx="50%" cy="50%" innerRadius={50} outerRadius={85} paddingAngle={3} stroke="none">
-                {sourceAttributions.map((e) => (
+              <Pie data={sourceData} dataKey="percentage" nameKey="name" cx="50%" cy="50%" innerRadius={45} outerRadius={75} paddingAngle={2} stroke="none">
+                {sourceData.map((e) => (
                   <Cell key={e.name} fill={e.color} />
                 ))}
               </Pie>
               <Tooltip
-                contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '12px', fontSize: '12px' }}
+                contentStyle={{ backgroundColor: '#171717', border: 'none', color: '#fff', fontSize: '11px', borderRadius: '0px' }}
                 formatter={(v) => [`${v}%`, '']}
               />
             </PieChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="lg:col-span-2 bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <h3 className="text-white font-semibold text-sm mb-4">Hourly Contribution by Source</h3>
+        <div className="lg:col-span-2 bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <h3 className="text-neutral-900 font-extrabold text-xs uppercase tracking-wider mb-3">Hourly Contribution by Source</h3>
           <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={hourlyBySource} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-              <XAxis dataKey="time" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={{ stroke: '#334155' }} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+            <BarChart data={defaultHourlyBySource} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
+              <XAxis dataKey="time" tick={{ fill: '#404040', fontSize: 11 }} axisLine={{ stroke: '#d4d4d4' }} tickLine={false} />
+              <YAxis tick={{ fill: '#404040', fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
-                contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '12px', fontSize: '12px' }}
-                cursor={{ fill: '#33415540' }}
+                contentStyle={{ backgroundColor: '#171717', border: 'none', color: '#fff', fontSize: '11px', borderRadius: '0px' }}
               />
-              <Bar dataKey="crop" stackId="a" fill="#22c55e" />
-              <Bar dataKey="traffic" stackId="a" fill="#06b6d4" />
-              <Bar dataKey="weather" stackId="a" fill="#3b82f6" />
-              <Bar dataKey="dust" stackId="a" fill="#6b7280" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="crop" stackId="a" fill="#34d399" />
+              <Bar dataKey="traffic" stackId="a" fill="#60a5fa" />
+              <Bar dataKey="weather" stackId="a" fill="#94a3b8" />
+              <Bar dataKey="dust" stackId="a" fill="#cbd5e1" radius={[0, 0, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -93,24 +223,22 @@ export default function AttributionPage() {
         {sourceDetails.map((s) => {
           const Icon = s.icon;
           return (
-            <div key={s.name} className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-              <div className="flex items-start gap-4 mb-3">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: s.color + '20' }}>
-                  <Icon className="w-6 h-6" style={{ color: s.color }} />
+            <div key={s.name} className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-none bg-neutral-100 border border-neutral-300 flex items-center justify-center shrink-0">
+                  <Icon className="w-5 h-5 text-neutral-800" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <h4 className="text-white font-semibold text-sm">{s.name}</h4>
-                    <span className="text-lg font-bold" style={{ color: s.color }}>{s.pct}%</span>
+                    <h4 className="text-neutral-900 font-extrabold text-xs uppercase">{s.name}</h4>
+                    <span className="text-base font-black font-mono text-neutral-900">{s.pct}%</span>
                   </div>
-                  <p className="text-slate-400 text-xs mt-1 leading-relaxed">{s.detail}</p>
+                  <p className="text-neutral-600 text-xs mt-1 leading-relaxed font-medium">{s.detail}</p>
                 </div>
               </div>
-              <div className="mt-3 p-3 rounded-xl bg-slate-900/40 border-l-2" style={{ borderColor: s.color }}>
-                <p className="text-slate-300 text-xs">
-                  <span className="font-semibold text-white">Recommended action: </span>
-                  {s.action}
-                </p>
+              <div className="mt-3 p-2.5 bg-neutral-100 border-l-2 border-neutral-800 text-xs text-neutral-800">
+                <span className="font-bold uppercase">Recommended action: </span>
+                {s.action}
               </div>
             </div>
           );

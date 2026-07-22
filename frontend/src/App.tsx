@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import MobileNav from './components/MobileNav';
 import DashboardPage from './pages/DashboardPage';
 import PredictionsPage from './pages/PredictionsPage';
@@ -8,63 +8,123 @@ import AttributionPage from './pages/AttributionPage';
 import AdvisoryPage from './pages/AdvisoryPage';
 import ReportsPage from './pages/ReportsPage';
 import AssistantPage from './pages/AssistantPage';
-import HeatMap from './components/HeatMap';
-import type { NavPage } from './types';
+import LiveMap from './components/map/LiveMap';
 
-export default function App() {
-  const [page, setPage] = useState<NavPage>('dashboard');
-  const [aqi, setAqi] = useState(312);
-  const [trend, setTrend] = useState(-8);
-  const [lastUpdated, setLastUpdated] = useState(new Date());
-  const [weather] = useState({
-    temp: 22,
-    humidity: 68,
-    windSpeed: 6,
-    windDir: 'NW',
-    visibility: 2.8,
-    pressure: 1018,
-    uvIndex: 4,
-  });
+import {
+  fetchDelhiAQI,
+  fetchBackendHealth,
+  fetchLiveWeather,
+  LiveAQIResponse,
+  HealthResponse,
+  LiveWeatherResponse
+} from './utils/api';
 
-  // Simulate live AQI updates
+const DELHI_LAT = 28.6139;
+const DELHI_LNG = 77.2090;
+
+function App() {
+  const [page, setPage] = useState('DASHBOARD');
+  const [selectedGridId, setSelectedGridId] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  const [liveAQI, setLiveAQI] = useState<LiveAQIResponse | null>(null);
+  const [backendHealth, setBackendHealth] = useState<HealthResponse | null>(null);
+  const [liveWeather, setLiveWeather] = useState<LiveWeatherResponse | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<string>('');
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setAqi((prev) => {
-        const delta = Math.floor(Math.random() * 7) - 3;
-        const next = Math.max(180, Math.min(450, prev + delta));
-        setTrend(next - prev);
-        return next;
-      });
-      setLastUpdated(new Date());
-    }, 5000);
+    const loadInitialData = async () => {
+      const [aqiData, healthData, weatherData] = await Promise.all([
+        fetchDelhiAQI(),
+        fetchBackendHealth(),
+        fetchLiveWeather(DELHI_LAT, DELHI_LNG)
+      ]);
+
+      if (aqiData) setLiveAQI(aqiData);
+      if (healthData) setBackendHealth(healthData);
+      if (weatherData) setLiveWeather(weatherData);
+      
+      setLastUpdated(new Date().toLocaleTimeString());
+    };
+
+    loadInitialData();
+    const interval = setInterval(loadInitialData, 300000); // 5 mins
     return () => clearInterval(interval);
   }, []);
 
+  const handleNavigate = (newPage: string) => {
+    setPage(newPage);
+    setIsSidebarOpen(false);
+  };
+
+  const isHealthy = backendHealth?.status === 'healthy';
+
+  const renderPage = () => {
+    switch (page) {
+      case 'DASHBOARD':
+        return (
+          <DashboardPage
+            selectedGridId={selectedGridId}
+            onSelectGrid={setSelectedGridId}
+            liveAQI={liveAQI}
+            liveWeather={liveWeather}
+          />
+        );
+      case 'map':
+        return (
+          <div className="bg-white border border-neutral-300 p-1 flex-1 flex flex-col">
+            <LiveMap onSelectGrid={setSelectedGridId} selectedGridId={selectedGridId} />
+          </div>
+        );
+      case 'PREDICTIONS':
+        return <PredictionsPage gridId={selectedGridId} onSelectGrid={setSelectedGridId} />;
+      case 'ATTRIBUTION':
+        return <AttributionPage gridId={selectedGridId} onSelectGrid={setSelectedGridId} />;
+      case 'ADVISORY':
+        return <AdvisoryPage aqi={liveAQI?.aqi || 0} />;
+      case 'REPORTS':
+        return <ReportsPage />;
+      case 'ASSISTANT':
+        return <AssistantPage />;
+      default:
+        return <DashboardPage selectedGridId={selectedGridId} onSelectGrid={setSelectedGridId} liveAQI={liveAQI} liveWeather={liveWeather} />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      {/* Ambient background glow */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+    <div className="flex h-screen bg-neutral-100 font-sans text-neutral-900 rounded-none">
+      {/* Sidebar - Desktop */}
+      <div className="hidden md:flex">
+        <Sidebar activePage={page} onNavigate={handleNavigate} />
       </div>
 
-      <Sidebar active={page} onNavigate={setPage} />
-
-      <div className="lg:ml-64 relative">
-        <Header onMenuClick={() => {}} activePage={page} lastUpdated={lastUpdated} />
-
-        <main className="p-4 sm:p-6 lg:p-8 pb-20 lg:pb-8">
-          {page === 'dashboard' && <DashboardPage aqi={aqi} trend={trend} weather={weather} />}
-          {page === 'map' && <HeatMap />}
-          {page === 'predictions' && <PredictionsPage />}
-          {page === 'attribution' && <AttributionPage />}
-          {page === 'advisory' && <AdvisoryPage aqi={aqi} />}
-          {page === 'reports' && <ReportsPage />}
-          {page === 'assistant' && <AssistantPage />}
+      <div className="flex-1 flex flex-col overflow-hidden rounded-none">
+        <Header 
+          activePage={page}
+          onNavigate={handleNavigate}
+          onMenuClick={() => setIsSidebarOpen(true)}
+          lastUpdated={lastUpdated}
+          aqi={liveAQI?.aqi || 0}
+          locationName={liveAQI?.station_name || "DELHI"}
+          backendHealthy={isHealthy}
+        />
+        
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-neutral-100 p-4 md:p-6 rounded-none">
+          {renderPage()}
         </main>
       </div>
 
-      <MobileNav active={page} onNavigate={setPage} />
+      {/* Mobile Sidebar */}
+      {isSidebarOpen && (
+        <div className="fixed inset-0 z-50 flex md:hidden">
+          <div className="fixed inset-0 bg-neutral-900/50" onClick={() => setIsSidebarOpen(false)} />
+          <div className="relative flex w-64 max-w-sm flex-col bg-neutral-900">
+            <MobileNav activePage={page} onNavigate={handleNavigate} onClose={() => setIsSidebarOpen(false)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
+export default App;

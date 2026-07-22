@@ -25,54 +25,54 @@ const complianceData = [
 
 export default function ReportsPage() {
   return (
-    <div className="space-y-5">
-      {/* Summary */}
+    <div className="space-y-4 font-sans text-neutral-900">
+      {/* Summary Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <Calendar className="w-4 h-4 text-cyan-400" />
-            <span className="text-slate-400 text-xs font-medium">Annual Average AQI</span>
+        <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1.5">
+            <Calendar className="w-4 h-4 text-neutral-700" />
+            <span className="text-neutral-600 text-xs font-bold uppercase tracking-wider">Annual Avg AQI</span>
           </div>
-          <p className="text-white text-3xl font-bold">135</p>
-          <p className="text-orange-400 text-sm mt-1">Poor category</p>
+          <p className="text-neutral-900 text-3xl font-black font-mono">135</p>
+          <p className="text-amber-600 text-xs font-bold mt-1 uppercase">Poor Category</p>
         </div>
-        <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <TrendingDown className="w-4 h-4 text-emerald-400" />
-            <span className="text-slate-400 text-xs font-medium">Good Air Days</span>
+        <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1.5">
+            <TrendingDown className="w-4 h-4 text-emerald-600" />
+            <span className="text-neutral-600 text-xs font-bold uppercase tracking-wider">Good Air Days</span>
           </div>
-          <p className="text-white text-3xl font-bold">78</p>
-          <p className="text-emerald-400 text-sm mt-1">+12 vs last year</p>
+          <p className="text-neutral-900 text-3xl font-black font-mono">78</p>
+          <p className="text-emerald-700 text-xs font-bold mt-1 uppercase">+12 vs last year</p>
         </div>
-        <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <FileText className="w-4 h-4 text-blue-400" />
-            <span className="text-slate-400 text-xs font-medium">Reports Generated</span>
+        <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1.5">
+            <FileText className="w-4 h-4 text-neutral-700" />
+            <span className="text-neutral-600 text-xs font-bold uppercase tracking-wider">Reports Generated</span>
           </div>
-          <p className="text-white text-3xl font-bold">24</p>
-          <p className="text-slate-400 text-sm mt-1">This quarter</p>
+          <p className="text-neutral-900 text-3xl font-black font-mono">24</p>
+          <p className="text-neutral-600 text-xs font-medium mt-1">This quarter</p>
         </div>
       </div>
 
       {/* Monthly trend */}
-      <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-        <div className="flex items-center justify-between mb-4">
+      <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+        <div className="flex items-center justify-between mb-3">
           <div>
-            <h3 className="text-white font-semibold text-sm">Monthly AQI Trends — 2025</h3>
-            <p className="text-slate-500 text-xs mt-0.5">12-month historical data</p>
+            <h3 className="text-neutral-900 font-extrabold text-xs uppercase tracking-wider">Monthly AQI Trends — 2025</h3>
+            <p className="text-neutral-500 text-xs mt-0.5 font-medium">12-month historical data</p>
           </div>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/15 text-cyan-300 text-xs font-medium hover:bg-cyan-500/25 transition">
-            <Download className="w-3.5 h-3.5" /> Export
+          <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider hover:bg-neutral-900 transition">
+            <Download className="w-3.5 h-3.5" /> Export PDF
           </button>
         </div>
-        <ResponsiveContainer width="100%" height={280}>
+        <ResponsiveContainer width="100%" height={260}>
           <LineChart data={monthlyData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-            <XAxis dataKey="month" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={{ stroke: '#334155' }} tickLine={false} />
-            <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-            <Tooltip contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '12px', fontSize: '12px' }} />
-            <Legend wrapperStyle={{ fontSize: '12px' }} />
-            <Line type="monotone" dataKey="aqi" stroke="#06b6d4" strokeWidth={2.5} dot={{ r: 3 }} name="AQI" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
+            <XAxis dataKey="month" tick={{ fill: '#404040', fontSize: 11 }} axisLine={{ stroke: '#d4d4d4' }} tickLine={false} />
+            <YAxis tick={{ fill: '#404040', fontSize: 11 }} axisLine={false} tickLine={false} />
+            <Tooltip contentStyle={{ backgroundColor: '#171717', border: 'none', borderRadius: '0px', color: '#fff', fontSize: '11px' }} />
+            <Legend wrapperStyle={{ fontSize: '11px', fontWeight: 'bold' }} />
+            <Line type="monotone" dataKey="aqi" stroke="#171717" strokeWidth={2.5} dot={{ r: 3 }} name="AQI" />
             <Line type="monotone" dataKey="pm25" stroke="#f97316" strokeWidth={2} dot={{ r: 3 }} name="PM2.5" />
             <Line type="monotone" dataKey="pm10" stroke="#22c55e" strokeWidth={2} dot={{ r: 3 }} name="PM10" />
           </LineChart>
@@ -80,21 +80,21 @@ export default function ReportsPage() {
       </div>
 
       {/* Compliance */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <h3 className="text-white font-semibold text-sm mb-4">Standards Compliance</h3>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <h3 className="text-neutral-900 font-extrabold text-xs uppercase tracking-wider mb-4">Standards Compliance</h3>
           <div className="space-y-4">
             {complianceData.map((c) => {
               const pct = Math.round((c.days / c.total) * 100);
               return (
                 <div key={c.standard}>
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-slate-300 text-xs font-medium">{c.standard}</span>
-                    <span className="text-white text-xs font-bold">{c.days}/{c.total} days exceeded</span>
+                    <span className="text-neutral-800 text-xs font-extrabold uppercase">{c.standard}</span>
+                    <span className="text-neutral-900 text-xs font-mono font-black">{c.days}/{c.total} days exceeded</span>
                   </div>
-                  <div className="h-2.5 rounded-full bg-slate-900/60 overflow-hidden">
+                  <div className="h-2.5 rounded-none bg-neutral-200 overflow-hidden border border-neutral-300">
                     <div
-                      className="h-full rounded-full transition-all duration-700"
+                      className="h-full rounded-none transition-all duration-700"
                       style={{ width: `${pct}%`, backgroundColor: pct > 70 ? '#ef4444' : pct > 50 ? '#f97316' : '#22c55e' }}
                     />
                   </div>
@@ -104,16 +104,16 @@ export default function ReportsPage() {
           </div>
         </div>
 
-        <div className="bg-slate-800/40 rounded-2xl border border-slate-700/50 p-5">
-          <h3 className="text-white font-semibold text-sm mb-4">Pollutant Distribution</h3>
+        <div className="bg-white rounded-none border border-neutral-300 p-4 shadow-sm">
+          <h3 className="text-neutral-900 font-extrabold text-xs uppercase tracking-wider mb-4">Pollutant Distribution</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={monthlyData.slice(0, 6)} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
-              <XAxis dataKey="month" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={{ stroke: '#334155' }} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <Tooltip contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '12px', fontSize: '12px' }} cursor={{ fill: '#33415540' }} />
-              <Bar dataKey="pm25" fill="#f97316" radius={[4, 4, 0, 0]} name="PM2.5" />
-              <Bar dataKey="pm10" fill="#22c55e" radius={[4, 4, 0, 0]} name="PM10" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
+              <XAxis dataKey="month" tick={{ fill: '#404040', fontSize: 11 }} axisLine={{ stroke: '#d4d4d4' }} tickLine={false} />
+              <YAxis tick={{ fill: '#404040', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <Tooltip contentStyle={{ backgroundColor: '#171717', border: 'none', borderRadius: '0px', color: '#fff', fontSize: '11px' }} />
+              <Bar dataKey="pm25" fill="#f97316" radius={[0, 0, 0, 0]} name="PM2.5" />
+              <Bar dataKey="pm10" fill="#22c55e" radius={[0, 0, 0, 0]} name="PM10" />
             </BarChart>
           </ResponsiveContainer>
         </div>

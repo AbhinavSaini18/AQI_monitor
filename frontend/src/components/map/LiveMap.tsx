@@ -1,240 +1,261 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Map, { Source, Layer } from 'react-map-gl/maplibre';
-import 'maplibre-gl/dist/maplibre-gl.css';
-import { X, Plus, Minus, Maximize2, Layers } from 'lucide-react';
 
-/* ── CARTO dark basemap ── */
-// Added 'any' type here to satisfy MapLibre's strict StyleSpecification requirements
-const MAP_STYLE: any = {
+import 'maplibre-gl/dist/maplibre-gl.css';
+import { fetchGrid, fetchHeatmap, GridCell, HeatmapItem } from '../../utils/api';
+import { Layers } from 'lucide-react';
+import type { FeatureCollection, Feature, Geometry } from 'geojson';
+
+interface LiveMapProps {
+  onSelectGrid?: (gridId: string | null) => void;
+  selectedGridId?: string | null;
+}
+
+// CARTO Light basemap
+const MAP_STYLE = {
   version: 8,
-  glyphs: 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
   sources: {
-    carto: {
+    'carto-light': {
       type: 'raster',
       tiles: [
-        'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-        'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-        'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+        'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
+        'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
+        'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
+        'https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png'
       ],
       tileSize: 256,
-    },
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }
   },
-  layers: [{ id: 'basemap', type: 'raster', source: 'carto' }],
+  layers: [
+    {
+      id: 'carto-light-layer',
+      type: 'raster',
+      source: 'carto-light',
+      minzoom: 0,
+      maxzoom: 22
+    }
+  ]
 };
 
-/* ── Delhi Center ── */
-const LNG = 77.2090;
-const LAT = 28.6139;
-
-/* ── Layer toggles ── */
-const LAYER_OPTIONS = [
-  { label: 'Land Use',          on: true  },
-  { label: 'Traffic',           on: true  },
-  { label: 'Construction',      on: true  },
-  { label: 'Satellite Thermal', on: false, emoji: '🔥' },
-  { label: 'Meteo',             on: false },
-];
-
-/* ── Top quick-select ── */
-const TOP_BTNS = [
-  { label: 'Land Use',     icon: '🌍' },
-  { label: 'Traffic',      icon: '🚦' },
-  { label: 'Construction', icon: '🏗️' },
-  { label: 'Satellite',    icon: '🛰️' },
-  { label: 'Thermal',      icon: '🌡️' },
-  { label: 'Meteo',        icon: '🌤️' },
-];
-
-/* ── AQI colour scale ── */
-const AQI_SCALE = [
-  { label: '350+', color: '#7c3aed' },
-  { label: '300',  color: '#b91c1c' },
-  { label: '250',  color: '#ef4444' },
-  { label: '200',  color: '#f97316' },
-  { label: '150',  color: '#fb923c' },
-  { label: '100',  color: '#eab308' },
-  { label: '50',   color: '#84cc16' },
-  { label: '0',    color: '#22c55e' },
-];
-
-export default function LiveMap() {
-  const [showPanel,  setShowPanel]  = useState(true);
-  const [activeTop,  setActiveTop]  = useState('Traffic');
-  
-  // Moved inside the component and added TypeScript generic <any>
-  const [gridGeoJSON, setGridGeoJSON] = useState<any>(null);
-
-  // Added TypeScript Record type so it knows the keys are strings and values are booleans
-  const [layers, setLayers] = useState<Record<string, boolean>>(
-    LAYER_OPTIONS.reduce((a, l) => ({ ...a, [l.label]: l.on }), {})
-  );
-
-  // Added 'lbl: string' type
-  const toggle = useCallback((lbl: string) => setLayers(p => ({ ...p, [lbl]: !p[lbl] })), []);
+export default function LiveMap({ onSelectGrid, selectedGridId }: LiveMapProps) {
+  const [gridData, setGridData] = useState<GridCell[]>([]);
+  const [heatmapData, setHeatmapData] = useState<HeatmapItem[]>([]);
+  const [activeLayer, setActiveLayer] = useState<'heatmap' | 'traffic' | 'construction' | 'thermal' | 'meteo'>('heatmap');
+  const [hoverInfo, setHoverInfo] = useState<{ x: number; y: number; gridId: string; aqi: number; traffic: number; construction: number; thermal: number; meteo: number } | null>(null);
 
   useEffect(() => {
-    Promise.all([
-      fetch('http://localhost:8000/grid').then(res => res.json()),
-      fetch('http://localhost:8000/predictions/heatmap').then(res => res.json())
-    ])
-    .then(([gridData, heatmapData]) => {
-      
-      // Typed the dictionary keys and values
-      const aqiLookup: Record<string, number> = {};
-      
-      // Typed the incoming API item as 'any'
-      heatmapData.forEach((item: any) => {
-        aqiLookup[item.grid_id] = item.predicted_aqi;
-      });
-
-      // Typed the incoming API cell as 'any'
-      const features = gridData.map((cell: any) => ({
-        type: 'Feature',
-        properties: {
-          grid_id: cell.grid_id,
-          predicted_aqi: aqiLookup[cell.grid_id] || 0
-        },
-        geometry: JSON.parse(cell.geometry)
-      }));
-
-      setGridGeoJSON({
-        type: 'FeatureCollection',
-        features: features
-      });
-    })
-    .catch(err => console.error("Error fetching backend map data:", err));
+    const loadData = async () => {
+      const grids = await fetchGrid();
+      const hmap = await fetchHeatmap();
+      setGridData(grids);
+      setHeatmapData(hmap);
+    };
+    loadData();
+    const interval = setInterval(loadData, 300000); // 5 mins
+    return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/[0.07]"
-         style={{ background: '#070d1a' }}>
+  const geojson = useMemo<FeatureCollection | null>(() => {
+    if (!gridData.length || !heatmapData.length) return null;
+    
+    const aqiMap = new globalThis.Map(heatmapData.map(item => [item.grid_id, item.predicted_aqi]));
+    const attrMap = new globalThis.Map(heatmapData.map(item => [item.grid_id, item.source_attribution]));
 
-      {/* ── Top bar ── */}
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 z-20
-                      flex items-center gap-0.5
-                      bg-black/60 backdrop-blur-xl border border-white/[0.12]
-                      rounded-2xl px-2 py-1.5 shadow-2xl">
-        {TOP_BTNS.map(({ label, icon }) => (
-          <button key={label} onClick={() => setActiveTop(label)}
-            className={`flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl transition-all duration-200 ${
-              activeTop === label
-                ? 'bg-white/12 border border-white/20'
-                : 'hover:bg-white/6'
-            }`}>
-            <span className="text-sm leading-none">{icon}</span>
-            <span className={`text-[9px] font-semibold whitespace-nowrap ${
-              activeTop === label ? 'text-white' : 'text-slate-500'
-            }`}>{label}</span>
-          </button>
-        ))}
+    const features: Feature[] = gridData
+      .map(cell => {
+        try {
+          const geom = typeof cell.geometry === 'string' ? JSON.parse(cell.geometry) : cell.geometry;
+          const attr = attrMap.get(cell.grid_id) || {};
+          return {
+            type: 'Feature',
+            geometry: geom as Geometry,
+            properties: {
+              grid_id: cell.grid_id,
+              aqi: aqiMap.get(cell.grid_id) || 0,
+              traffic: typeof attr === 'object' ? attr.traffic || 0 : 0,
+              construction: typeof attr === 'object' ? attr.construction || 0 : 0,
+              thermal: typeof attr === 'object' ? attr.thermal || 0 : 0,
+              meteo: typeof attr === 'object' ? attr.meteo || 0 : 0,
+            }
+          } as Feature;
+        } catch (e) {
+          return null;
+        }
+      })
+      .filter((f): f is Feature => f !== null);
+
+    return { type: 'FeatureCollection', features };
+  }, [gridData, heatmapData]);
+
+  const getFillColor = (layer: string) => {
+    if (layer === 'traffic') return ['interpolate', ['linear'], ['get', 'traffic'], 0, 'rgba(0,0,0,0)', 30, 'rgba(96, 165, 250, 0.4)', 60, 'rgba(59, 130, 246, 0.8)'];
+    if (layer === 'construction') return ['interpolate', ['linear'], ['get', 'construction'], 0, 'rgba(0,0,0,0)', 20, 'rgba(203, 213, 225, 0.4)', 40, 'rgba(148, 163, 184, 0.8)'];
+    if (layer === 'thermal') return ['interpolate', ['linear'], ['get', 'thermal'], 0, 'rgba(0,0,0,0)', 20, 'rgba(248, 113, 113, 0.4)', 40, 'rgba(220, 38, 38, 0.8)'];
+    if (layer === 'meteo') return ['interpolate', ['linear'], ['get', 'meteo'], 0, 'rgba(0,0,0,0)', 20, 'rgba(52, 211, 153, 0.4)', 40, 'rgba(16, 185, 129, 0.8)'];
+    return [
+      'interpolate', ['linear'], ['get', 'aqi'],
+      0, 'rgba(34, 197, 94, 0.4)',
+      50, 'rgba(34, 197, 94, 0.5)', 
+      100, 'rgba(234, 179, 8, 0.5)',
+      200, 'rgba(249, 115, 22, 0.6)',
+      300, 'rgba(239, 68, 68, 0.7)',
+      400, 'rgba(147, 51, 234, 0.8)',
+      500, 'rgba(153, 27, 27, 0.9)'
+    ];
+  };
+
+  const fillLayerStyle = {
+    id: 'grid-fill',
+    type: 'fill',
+    paint: {
+      'fill-color': getFillColor(activeLayer),
+      'fill-opacity': 0.7
+    }
+  };
+
+  const lineLayerStyle = {
+    id: 'grid-line',
+    type: 'line',
+    paint: {
+      'line-color': '#171717',
+      'line-opacity': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        1,
+        0.1
+      ],
+      'line-width': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        2,
+        0.5
+      ]
+    }
+  };
+
+  const selectedLineLayerStyle = {
+    id: 'grid-selected-line',
+    type: 'line',
+    paint: {
+      'line-color': '#000000',
+      'line-width': 3
+    },
+    filter: ['==', 'grid_id', selectedGridId || '']
+  };
+
+  const onClick = (event: any) => {
+    const feature = event.features && event.features[0];
+    if (feature && onSelectGrid) {
+      onSelectGrid(feature.properties.grid_id);
+    } else if (onSelectGrid) {
+      onSelectGrid(null);
+    }
+  };
+
+  const onHover = (event: any) => {
+    const feature = event.features && event.features[0];
+    if (feature) {
+      setHoverInfo({
+        x: event.point.x,
+        y: event.point.y,
+        gridId: feature.properties.grid_id,
+        aqi: feature.properties.aqi,
+        traffic: feature.properties.traffic,
+        construction: feature.properties.construction,
+        thermal: feature.properties.thermal,
+        meteo: feature.properties.meteo
+      });
+    } else {
+      setHoverInfo(null);
+    }
+  };
+
+  return (
+    <div className="w-full h-full relative">
+      {/* Top Bar */}
+      <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
+        <div className="bg-neutral-900 text-white px-4 py-2 flex items-center gap-2 pointer-events-auto shadow-md">
+            <Layers className="w-4 h-4" />
+            <span className="text-xs font-bold uppercase tracking-wider">MAP LAYERS</span>
+        </div>
+        <div className="flex bg-white shadow-md border border-neutral-300 pointer-events-auto">
+            {['heatmap', 'traffic', 'construction', 'thermal', 'meteo'].map(layer => (
+                <button
+                    key={layer}
+                    onClick={() => setActiveLayer(layer as any)}
+                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors ${
+                        activeLayer === layer 
+                            ? 'bg-neutral-900 text-white' 
+                            : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100'
+                    }`}
+                >
+                    {layer}
+                </button>
+            ))}
+        </div>
       </div>
 
-      {/* ── Map ── */}
       <Map
-        initialViewState={{ longitude: LNG, latitude: LAT, zoom: 10.2 }}
+        initialViewState={{
+          longitude: 77.2090,
+          latitude: 28.6139,
+          zoom: 10
+        }}
+        mapStyle={MAP_STYLE as any}
+        interactiveLayerIds={['grid-fill']}
+        onClick={onClick}
+        onMouseMove={onHover}
+        onMouseLeave={() => setHoverInfo(null)}
         style={{ width: '100%', height: '100%' }}
-        mapStyle={MAP_STYLE}
-        attributionControl={false}
+        cursor={hoverInfo ? 'pointer' : 'default'}
       >
-        {gridGeoJSON && (
-          <Source id="delhi-grid-source" type="geojson" data={gridGeoJSON}>
-            <Layer
-              id="delhi-grid-layer"
-              type="fill"
-              paint={{
-                'fill-color': [
-                  'interpolate', ['linear'], ['get', 'predicted_aqi'],
-                  0,   '#22c55e', 
-                  50,  '#84cc16', 
-                  100, '#eab308', 
-                  150, '#fb923c', 
-                  200, '#f97316', 
-                  250, '#ef4444', 
-                  300, '#b91c1c', 
-                  350, '#7c3aed'  
-                ],
-                'fill-opacity': 0.65,
-                'fill-outline-color': 'rgba(255, 255, 255, 0.05)' 
-              }}
-            />
+        {geojson && (
+          <Source id="grid" type="geojson" data={geojson}>
+            <Layer {...(fillLayerStyle as any)} />
+            <Layer {...(lineLayerStyle as any)} />
+            <Layer {...(selectedLineLayerStyle as any)} />
           </Source>
         )}
       </Map>
 
-      {/* ── Zoom controls ── */}
-      <div className="absolute top-14 left-3 z-20 flex flex-col gap-1">
-        {[<Plus key="plus" size={13}/>, <Minus key="minus" size={13}/>].map((icon, i) => (
-          <button key={i}
-            className="w-8 h-8 rounded-xl flex items-center justify-center text-slate-400
-                       hover:text-white transition-all border border-white/[0.09] shadow-lg"
-            style={{ background: 'rgba(13,21,38,0.9)', backdropFilter: 'blur(8px)' }}>
-            {icon}
-          </button>
-        ))}
-        <div className="h-px bg-white/10 my-0.5" />
-        <button className="w-8 h-8 rounded-xl flex items-center justify-center text-slate-400
-                           hover:text-white transition-all border border-white/[0.09] shadow-lg"
-                style={{ background: 'rgba(13,21,38,0.9)', backdropFilter: 'blur(8px)' }}>
-          <Maximize2 size={11} />
-        </button>
-      </div>
-
-      {/* ── Layer Toggle Panel ── */}
-      {showPanel ? (
-        <div className="absolute top-14 left-14 z-20 rounded-2xl p-3.5 w-48 shadow-2xl border border-white/[0.09]"
-             style={{ background: 'rgba(8,13,26,0.95)', backdropFilter: 'blur(16px)' }}>
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-1.5">
-              <Layers size={11} className="text-cyan-400" />
-              <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Layer Toggle</p>
-            </div>
-            <button onClick={() => setShowPanel(false)} className="text-slate-600 hover:text-white transition-colors">
-              <X size={11} />
-            </button>
-          </div>
-          <div className="flex flex-col gap-2.5">
-            {LAYER_OPTIONS.map(({ label, emoji }) => (
-              <label key={label} className="flex items-center gap-2.5 cursor-pointer select-none group">
-                <button onClick={() => toggle(label)}
-                  className={`w-4 h-4 rounded-[4px] flex items-center justify-center border flex-shrink-0 transition-all ${
-                    layers[label]
-                      ? 'border-cyan-400 shadow-sm shadow-cyan-500/30'
-                      : 'bg-transparent border-slate-600'
-                  }`}
-                  style={layers[label] ? { background: '#06b6d4' } : {}}>
-                  {layers[label] && (
-                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none">
-                      <path d="M1 3L3 5L7 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )}
-                </button>
-                <span className="text-[12px] text-slate-400 group-hover:text-slate-200 transition-colors leading-none">
-                  {label}{emoji && ` ${emoji}`}
+      {/* Tooltip */}
+      {hoverInfo && (
+        <div 
+            className="absolute bg-white border border-neutral-300 p-3 shadow-lg pointer-events-none"
+            style={{ left: hoverInfo.x + 10, top: hoverInfo.y + 10 }}
+        >
+            <div className="text-[10px] font-bold text-neutral-500 uppercase mb-1">GRID ID</div>
+            <div className="text-xs font-mono font-bold bg-neutral-100 p-1 mb-2">{hoverInfo.gridId}</div>
+            <div className="flex justify-between items-center border-t border-neutral-200 pt-2">
+                <span className="text-[10px] font-bold text-neutral-500 uppercase">
+                  {activeLayer === 'heatmap' ? 'PREDICTED AQI' : `${activeLayer} %`}
                 </span>
-              </label>
-            ))}
-          </div>
+                <span className="text-sm font-black">
+                  {activeLayer === 'heatmap' ? hoverInfo.aqi.toFixed(0) : hoverInfo[activeLayer]?.toFixed(0) || '0'}
+                </span>
+            </div>
         </div>
-      ) : (
-        <button onClick={() => setShowPanel(true)}
-          className="absolute top-14 left-14 z-20 rounded-xl px-2.5 py-1.5 flex items-center gap-1.5
-                     text-[11px] text-slate-400 hover:text-white transition-all border border-white/[0.09] shadow-lg"
-          style={{ background: 'rgba(13,21,38,0.9)', backdropFilter: 'blur(8px)' }}>
-          <Layers size={11}/> Layers
-        </button>
       )}
 
-      {/* ── AQI Scale ── */}
-      <div className="absolute right-3 top-1/2 -translate-y-1/2 z-20">
-        <p className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1.5 text-center">AQI</p>
-        <div className="rounded-xl overflow-hidden border border-white/[0.09] shadow-xl"
-             style={{ background: 'rgba(8,13,26,0.85)', backdropFilter: 'blur(10px)' }}>
-          {AQI_SCALE.map(({ label, color }) => (
-            <div key={label} className="flex items-center gap-2 px-2 py-[4px]">
-              <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: color }} />
-              <span className="text-[9px] text-slate-400 font-medium w-6">{label}</span>
-            </div>
-          ))}
+      {/* Legend */}
+      <div className="absolute bottom-6 right-6 bg-white border border-neutral-300 p-4 shadow-md pointer-events-auto">
+        <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-3">AQI SCALE</h4>
+        <div className="flex flex-col gap-2">
+            {[
+                { label: 'GOOD', color: 'bg-green-500', range: '0-50' },
+                { label: 'SATISFACTORY', color: 'bg-yellow-500', range: '51-100' },
+                { label: 'MODERATE', color: 'bg-orange-500', range: '101-200' },
+                { label: 'POOR', color: 'bg-red-500', range: '201-300' },
+                { label: 'VERY POOR', color: 'bg-purple-600', range: '301-400' },
+                { label: 'SEVERE', color: 'bg-red-800', range: '401+' }
+            ].map(item => (
+                <div key={item.label} className="flex items-center gap-3">
+                    <div className={`w-3 h-3 ${item.color}`} />
+                    <span className="text-[10px] font-bold text-neutral-900 uppercase w-24">{item.label}</span>
+                    <span className="text-[10px] font-medium text-neutral-500 w-12 text-right">{item.range}</span>
+                </div>
+            ))}
         </div>
       </div>
     </div>
